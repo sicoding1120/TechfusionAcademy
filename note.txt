@@ -1,0 +1,11 @@
+ todo list struktural pages web :
+
+1.Struktur Proyek yang Jelas (y/n) : 
+2.Routing Dinamis (y/n) :
+3.Komponen Reusable (y/n) :
+4.Penggunaan Layout (y/n) :
+
+-> penjelasan :
+
+1.struktur project :
+    dalam web ini kami telah membuat struktur web berdasarkan route bawaan dari next yang di nama route utama berada di dalam folder peges

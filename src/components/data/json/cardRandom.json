@@ -1,0 +1,31 @@
+{
+    "data": {
+        "type": {
+            "courses": {
+                "dataName": "card for courses",
+                "data": [{
+                    "title": "TECHFUSION friend's solution",
+                    "subTitle": "You can see all the brilliant solutions to various challenges here.",
+                    "isbutton": true,
+                    "isImg": true,
+                    "img": [{
+                        "url": "/assets/olther/img1.png",
+                        "className": "relative z-[1] left-14"
+                    }, {
+                        "url": "/assets/olther/img2.png",
+                        "className": "relative z-[2]"
+                    }, {
+                        "url": "/assets/olther/img3.png",
+                        "className": "relative z-[3] right-10"
+                    }]
+                }, {
+                    "title": "Discussion Forums & Communities",
+                    "subTitle": "A great place to ask questions, share knowledge and learn together about Coding!",
+                    "isbutton": false,
+                    "isImg": false,
+                    "img": []
+                }]
+            }
+        }
+    }
+}

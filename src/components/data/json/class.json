@@ -1,0 +1,127 @@
+[{
+    "id": 1,
+    "title": "Basic of Html",
+    "keyOfSearch": "htm",
+    "headerTitle": "Html",
+    "price": 0,
+    "isDiscount": false,
+    "img": "",
+    "discount": 20,
+    "aboutClass": [{
+            "text": "Nowadays, most aspects of our lives require apps. From buying goods, ordering food, to making transactions."
+        },
+        {
+            "text": "Please note that before an application is created, there is a process known as UI / UX Design.Well, this Intro to UI / UX material will help you get to know UI / UX Design fundamentally, as a provision to prepare yourself to become a UI / UX Designer."
+        },
+        {
+            "text": "To learn this class, you don't need to have any prior UI/UX experience. Therefore, this class is perfect for those of you who:"
+        },
+        {
+            "text": "New to UI/UX Design Switching careers to UI / UX Design Expanding your knowledge of UI / UX Design fundamentally"
+        },
+        {
+            "text": "Skilvul invites you to get to know what UI/UX Design is, the principles of UI / UX Design, and how to create a landing page that you can use as a portfolio in the field of UI / UX Design."
+        }
+    ],
+    "classDetail": {
+        "materials": 48,
+        "points": 120
+    },
+    "mentor": [{
+            "profileImg": "",
+            "name": "Dandy Setiawan"
+        },
+        {
+            "profileImg": "",
+            "name": "Johny El SIcario"
+        }
+    ],
+    "certification": false,
+    "materialToBeLearn": {
+        "text": "Equipped with video tutorials, practice, and quizzes, here are the topics you will learn: UI / UX definitions and tools Using UI / UX Design Frameworks(such as: Design Thinking & Double Diamond), and how to use them Learn to use UI / UX Design tools(such as: Figjam & Figma) Know the preparation stages of creating a landing page Utilize Artificial Intelligent(AI) in creating landing pages Create a landing page in Figma "
+    }
+}, {
+    "id": 2,
+    "title": "Style With Css Basic",
+    "keyOfSearch": "css",
+    "headerTitle": "Css",
+    "price": 1200000,
+    "isDiscount": false,
+    "img": "",
+    "discount": 20,
+    "aboutClass": [{
+            "text": "Nowadays, most aspects of our lives require apps. From buying goods, ordering food, to making transactions."
+        },
+        {
+            "text": "Please note that before an application is created, there is a process known as UI / UX Design.Well, this Intro to UI / UX material will help you get to know UI / UX Design fundamentally, as a provision to prepare yourself to become a UI / UX Designer."
+        },
+        {
+            "text": "To learn this class, you don't need to have any prior UI/UX experience. Therefore, this class is perfect for those of you who:"
+        },
+        {
+            "text": "New to UI/UX Design Switching careers to UI / UX Design Expanding your knowledge of UI / UX Design fundamentally"
+        },
+        {
+            "text": "Skilvul invites you to get to know what UI/UX Design is, the principles of UI / UX Design, and how to create a landing page that you can use as a portfolio in the field of UI / UX Design."
+        }
+    ],
+    "classDetail": {
+        "materials": 39,
+        "points": 250
+    },
+    "mentor": [{
+            "profileImg": "",
+            "name": "Dandy Setiawan"
+        },
+        {
+            "profileImg": "",
+            "name": "Johny El SIcario"
+        }
+    ],
+    "certification": false,
+    "materialToBeLearn": {
+        "text": "Equipped with video tutorials, practice, and quizzes, here are the topics you will learn: UI / UX definitions and tools Using UI / UX Design Frameworks(such as: Design Thinking & Double Diamond), and how to use them Learn to use UI / UX Design tools(such as: Figjam & Figma) Know the preparation stages of creating a landing page Utilize Artificial Intelligent(AI) in creating landing pages Create a landing page in Figma "
+    }
+}, {
+    "id": 3,
+    "title": "Javascript Basic 1",
+    "keyOfSearch": "jav",
+    "headerTitle": "Js",
+    "price": 250000,
+    "isDiscount": false,
+    "img": "",
+    "discount": 20,
+    "aboutClass": [{
+            "text": "Nowadays, most aspects of our lives require apps. From buying goods, ordering food, to making transactions."
+        },
+        {
+            "text": "Please note that before an application is created, there is a process known as UI / UX Design.Well, this Intro to UI / UX material will help you get to know UI / UX Design fundamentally, as a provision to prepare yourself to become a UI / UX Designer."
+        },
+        {
+            "text": "To learn this class, you don't need to have any prior UI/UX experience. Therefore, this class is perfect for those of you who:"
+        },
+        {
+            "text": "New to UI/UX Design Switching careers to UI / UX Design Expanding your knowledge of UI / UX Design fundamentally"
+        },
+        {
+            "text": "Skilvul invites you to get to know what UI/UX Design is, the principles of UI / UX Design, and how to create a landing page that you can use as a portfolio in the field of UI / UX Design."
+        }
+    ],
+    "classDetail": {
+        "materials": 80,
+        "points": 860
+    },
+    "mentor": [{
+            "profileImg": "",
+            "name": "Dandy Setiawan"
+        },
+        {
+            "profileImg": "",
+            "name": "Johny El SIcario"
+        }
+    ],
+    "certification": false,
+    "materialToBeLearn": {
+        "text": "Equipped with video tutorials, practice, and quizzes, here are the topics you will learn: UI / UX definitions and tools Using UI / UX Design Frameworks(such as: Design Thinking & Double Diamond), and how to use them Learn to use UI / UX Design tools(such as: Figjam & Figma) Know the preparation stages of creating a landing page Utilize Artificial Intelligent(AI) in creating landing pages Create a landing page in Figma "
+    }
+}]

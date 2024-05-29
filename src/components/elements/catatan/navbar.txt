@@ -1,0 +1,120 @@
+"use client";
+import React from "react";
+import {
+  useColorMode,
+  Button,
+  Flex,
+  Box,
+  useColorModeValue,
+  IconButton,
+  useDisclosure,
+  Drawer,
+  DrawerOverlay,
+  DrawerContent,
+  DrawerCloseButton,
+  DrawerHeader,
+  DrawerBody,
+  DrawerFooter,
+  Stack,
+  Text,
+} from "@chakra-ui/react";
+import { MoonIcon, SunIcon, HamburgerIcon } from "@chakra-ui/icons";
+import { Menu, DataButton } from "../data/data";
+
+const Navbar = () => {
+  const { colorMode, toggleColorMode } = useColorMode();
+  const isDark = colorMode === "dark";
+  const bgColor = useColorModeValue("#EDFFF3", "gray.800");
+  const textColor = useColorModeValue("black", "white");
+
+  return (
+    <Flex
+      as="nav"
+      align="center"
+      justify="space-between"
+      wrap="wrap"
+      bg={bgColor}
+      color={textColor}
+      className="md:px-24 py-8 px-8"
+    >
+      <Box>
+        <Text className="md:text-lg text-sm font-bold uppercase">
+          techfusion academy
+        </Text>
+      </Box>
+      <Box className="md:block hidden">
+        <Flex className="flex gap-6 capitalize ">
+          {Menu.map((items, index) => (
+            <Text key={index} className="cursor-pointer hover: ">
+              {items.title}
+            </Text>
+          ))}
+        </Flex>
+      </Box>
+      <Box>
+        <Flex className="flex items-center gap-4">
+          <Button
+            onClick={toggleColorMode}
+            variant="ghost"
+            colorScheme="teal"
+            size="sm"
+            leftIcon={isDark ? <SunIcon /> : <MoonIcon />}
+            className="hidden"
+          >
+            {isDark ? "Terang" : "Gelap"}
+          </Button>
+          <Box className="md:flex hidden gap-4">
+            {DataButton.map((items, index) => (
+              <button key={index} className={items.className}>
+                {items.title}
+              </button>
+            ))}
+          </Box>
+        </Flex>
+      </Box>
+      <SideBar />
+    </Flex>
+  );
+};
+const SideBar = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  return (
+    <>
+      <Box display={{ base: "block", md: "none" }} onClick={onOpen}>
+        <IconButton
+          aria-label="Menu"
+          icon={<HamburgerIcon boxSize={6} />}
+          variant="ghost"
+          colorScheme="teal"
+          size="sm"
+        />
+      </Box>
+      <Drawer isOpen={isOpen} placement="top" onClose={onClose}>
+        <DrawerOverlay />
+        <DrawerContent>
+          <DrawerCloseButton />
+          <DrawerHeader>Menu</DrawerHeader>
+          <DrawerBody>
+            <Stack spacing={4}>
+              {Menu.map((items, index) => (
+                <Text key={index} className="cursor-pointer">
+                  {items.title}
+                </Text>
+              ))}
+            </Stack>
+          </DrawerBody>
+          <DrawerFooter>
+            <Flex className="flex gap-4">
+              {DataButton.map((items, index) => (
+                <button key={index} className={items.className}>
+                  {items.title}
+                </button>
+              ))}
+            </Flex>
+          </DrawerFooter>
+        </DrawerContent>
+      </Drawer>
+    </>
+  );
+};
+export default Navbar;

@@ -1,0 +1,260 @@
+  {
+    "id": {
+      "input": {
+        "dataName": "input",
+        "type": {
+          "1": {
+            "data": [{
+                "type": "text",
+                "name": "username",
+                "iconUrl": "/assets/user.png"
+              },
+              {
+                "type": "email",
+                "name": "Email",
+                "iconUrl": "/assets/sms.png"
+              },
+              {
+                "type": "password",
+                "name": "Password",
+                "iconUrl": "/assets/lock.png"
+              }
+            ]
+          },
+          "2": {
+            "data": [{
+                "type": "text",
+                "name": "username",
+                "iconUrl": "/assets/user.png"
+              },
+              {
+                "type": "password",
+                "name": "Password",
+                "iconUrl": "/assets/lock.png"
+              }
+            ]
+
+          }
+        }
+      },
+      "button": {
+        "dataName": "button",
+        "type": {
+          "1": {
+            "data": [{
+                "title": "sign up",
+                "className": "btn bg-color-c1 capitalize border-none px-6 text-md hover:bg-color-c2 hover:text-white",
+                "link": "/auth/register"
+              },
+              {
+                "title": " Log in ",
+                "className": "btn bg-color-c2 text-white capitalize border-none px-6 text-md hover:bg-color-c1 hover:text-black",
+                "link": "/auth/login"
+              }
+            ]
+          },
+          "2": {
+            "data": [{
+                "title": "google",
+                "leftIconUrl": "/assets/google.png"
+              },
+              {
+                "title": "Facebook",
+                "leftIconUrl": "/assets/Facebook.png"
+              }
+            ]
+          }
+        }
+      },
+      "Text": {
+        "dataName": "Text",
+        "data": {
+          "type": {
+            "Text": {
+              "1": [{
+                  "text": "Grow your skill"
+                },
+                {
+                  "text": "to advance your"
+                },
+                {
+                  "text": "careeer path"
+                }
+              ],
+              "2": [{
+                  "text": "Are you a certifide"
+                },
+                {
+                  "text": "teacher then become"
+                },
+                {
+                  "text": "a instructor"
+                }
+              ]
+            },
+            "subText": {
+              "1": [{
+                  "text": "Lorem ipsum dolor sit amet, consectetur adipiscing"
+                },
+                {
+                  "text": "tempor incididunt ut labore et dolore magna aliqua."
+                },
+                {
+                  "text": "felis imperdiet proin fermentum leo."
+                }
+              ],
+              "2": [{
+                  "text": "Lorem ipsum dolor sit amet, consectetur adipiscing"
+                },
+                {
+                  "text": "tempor incididunt ut labore et dolore magna aliqua. ut"
+                },
+                {
+                  "text": "felis imperdiet proin fermentum leo. ncididunt ut labore"
+                },
+                {
+                  "text": "felis imperdiet proin fermentum leo."
+                }
+              ]
+            },
+            "textAbout": [{
+                "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempore eiusmod tempor adipiscing elit"
+              },
+              {
+                "text": "ut labore et dolore magna aliqua. Facilisis magna etiam tempor orci eu lobortis.eu lobortis etiam tempor orci"
+              },
+              {
+                "text": "leo integer malesuada nunc vel risus commodo viverra maecenas .maecenas."
+              }
+            ],
+            "textFooter": [{
+              "title": "Techfusion",
+              "menuTitle": [{
+                "menu": "About Us"
+              }, {
+                "menu": "Impact"
+              }, {
+                "menu": "Career"
+              }, {
+                "menu": "Partner"
+              }, {
+                "menu": "Showcase"
+              }, {
+                "menu": "Blog"
+              }]
+            }, {
+              "title": "Service",
+              "menuTitle": [{
+                "menu": "Class"
+              }, {
+                "menu": "Package"
+              }, {
+                "menu": "Scholarship Program"
+              }, {
+                "menu": "Bootcamp Program"
+              }, {
+                "menu": "Challenge"
+              }, {
+                "menu": "SkilPath"
+              }, {
+                "menu": "Event & Workshop"
+              }]
+            }, {
+              "title": "Help and Guidelines",
+              "menuTitle": [{
+                "menu": "Terms and Conditions"
+              }, {
+                "menu": "Privacy Policy"
+              }, {
+                "menu": "Forum"
+              }]
+            }]
+          }
+        }
+      },
+      "sponsor": {
+        "dataName": "sponsor",
+        "data": [{
+            "urlLogo": "/assets/logo1.png"
+          },
+          {
+            "urlLogo": "/assets/logo2.png"
+          },
+          {
+            "urlLogo": "/assets/logo3.png"
+          },
+          {
+            "urlLogo": "/assets/logo4.png"
+          }
+        ]
+      },
+      "card": {
+        "dataName": "card",
+        "data": {
+          "type": {
+            "courses": {
+              "dataName": "cardCourses",
+              "data": {
+                "id": {
+                  "1": [{
+                    "headTitle": "Chalengges",
+                    "title": "Take on a variety  of challenging challenges!",
+                    "subTitle": "Challenge yourself with a challenge to solve the problem at hand.",
+                    "istopic": false,
+                    "asideTopic": []
+                  }],
+                  "2": [{
+                    "headTitle": "Class",
+                    "title": "Industry Based TECHFUSION Class",
+                    "subTitle": "TECHFUSION provides a wide range of industry based classes to enhance your digital skills.",
+                    "istopic": true,
+                    "asideTopic": [{
+                      "isDecs": false,
+                      "title": "Intro To UI/UX Design",
+                      "img": "",
+                      "price": 0
+                    }, {
+                      "isDecs": false,
+                      "title": "Framer: Creating a Portfolio Website",
+                      "img": "",
+                      "price": 0
+                    }]
+                  }],
+                  "3": [{
+                    "headTitle": "TECHPath",
+                    "title": "Test Your Skills Here!",
+                    "subTitle": "Complete a TECHPath (Project) to put your learning into practice and earn a TECHBadge(Certificate).",
+                    "istopic": true,
+                    "asideTopic": [{
+                      "isDecs": true,
+                      "title": "Coding at TECHFUSION Playground",
+                      "img": "",
+                      "description": [{
+                        "title": "Recommended Before Starting the Course"
+                      }],
+                      "price": 0
+                    }, {
+                      "isDecs": true,
+                      "title": "Beginner Web Development",
+                      "img": "",
+                      "description": [{
+                        "title": "3 Class Prerequisites"
+                      }],
+                      "price": 0
+                    }]
+                  }],
+                  "4": [{
+                    "headTitle": "Package",
+                    "title": "Buy packages for less!",
+                    "subTitle": "Learn more purposefully and save money by purchasing study packages provided by TECHFUSION.",
+                    "istopic": false,
+                    "asideTopic": []
+                  }]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
