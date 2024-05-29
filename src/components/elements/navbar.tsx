@@ -20,15 +20,11 @@ import {
   DrawerFooter,
   Stack,
   Text,
-  MenuItem,
-  Menu,
-  MenuList,
   Circle,
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon, HamburgerIcon } from "@chakra-ui/icons";
 import dataRandom from "../data/json/dataRandom.json";
 import DataMenu from "../data/json/menu.json";
-import { IoIosSearch, IoIosClose, IoMdArrowDropdown } from "react-icons/io";
 
 const kanit = Kanit({
   subsets: ["latin"],
@@ -40,28 +36,17 @@ const inter = Inter({
 });
 
 const Navbar = () => {
-  const [searchBar, setSearchBar] = useState(false);
-  const [dropDown, setDropDown] = useState(false);
-  const { colorMode, toggleColorMode } = useColorMode();
-  const isDark = colorMode === "dark";
-  const bgColor = useColorModeValue("#EDFFF3", "gray.800");
-  const textColor = useColorModeValue("black", "white");
+  const [isDark, setIsDark] = useState(false)
+  const handleToggle = () => {
+    setIsDark(!isDark)
+  }
 
-  const SearchBar = () => {
-    setSearchBar(!searchBar);
-  };
-  const DropDown = () => {
-    setDropDown(!dropDown);
-    console.log(dropDown);
-  };
   return (
     <Flex
       as="nav"
       align="center"
       justify="space-between"
       wrap="wrap"
-      bg={bgColor}
-      color={textColor}
       className={`md:px-20 md:py-2 py-2 px-4 ${kanit.className}`}
     >
       <Link href={"/"} className="flex items-center cursor-pointer">
@@ -92,7 +77,7 @@ const Navbar = () => {
       <Box>
         <Flex className="flex items-center md:gap-4 gap-2">
           <Button
-            onClick={toggleColorMode}
+            onClick={handleToggle}
             variant="ghost"
             colorScheme="teal"
             size="md"
@@ -112,33 +97,6 @@ const Navbar = () => {
                 {items.title}
               </Link>
             ))}
-          </Box>
-          <Box>
-            <IoIosSearch
-              size={30}
-              className="cursor-pointer"
-              onClick={SearchBar}
-            />
-            <Box
-              className={` flex gap-4 items-center ${
-                searchBar === false ? "hidden" : "block"
-              } w-[20rem] h-10 absolute right-4 top-[8.2rem] transition-all ease-linear`}
-            >
-              <input
-                type="text"
-                className="px-2 py-1 border-none outline-none rounded-lg w-full h-full outline-color-c2 bg-white text-black"
-              />
-              <Circle
-                className="bg-color-c1 group hover:bg-color-c2 transition-all"
-                size={8}
-              >
-                <IoIosClose
-                  size={30}
-                  className="cursor-pointer group-hover:fill-white"
-                  onClick={SearchBar}
-                />
-              </Circle>
-            </Box>
           </Box>
           <SideBar />
         </Flex>
