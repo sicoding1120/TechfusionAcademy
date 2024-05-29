@@ -9,19 +9,19 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        bg1: "url('assets/background/bg-1.png')",
-        bg2: "url('assets/background/bg-2.png')",
-        bgLogin: "url('assets/background/bg-Login.png')",
-        bgLogin2: "url('assets/background/bg-Login2.png')",
-        bgLogin3: "url('assets/background/bg-responsive.png')",
-        bgLogin4: "url('assets/background/bg-responsive2.png')",
-        bgButton: "url('assets/background/bg-button.png')",
-        bgBlog: "url('assets/background/bg-content-blog.png')",
-        bgDetailClass: "url('assets/background/bg-detailClass.png')",
-        bgFooter: "url('assets/background/bg-footer.png')",
-        bgContentCourses: "url('assets/background/bg-content-corses.png')",
-        bgCourses: "url('assets/background/bg-courses.png')",
-        bgText: "url('assets/background/bg-text.png')",
+        bg1: "url('/assets/background/bg-1.png')",
+        bg2: "url('/assets/background/bg-2.png')",
+        bgLogin: "url('/assets/background/bg-Login.png')",
+        bgLogin2: "url('/assets/background/bg-Login2.png')",
+        bgLogin3: "url('/assets/background/bg-responsive.png')",
+        bgLogin4: "url('/assets/background/bg-responsive2.png')",
+        bgButton: "url('/assets/background/bg-button.png')",
+        bgBlog: "url('/assets/background/bg-content-blog.png')",
+        bgDetailClass: "url('/assets/background/bg-detailClass.png')",
+        bgFooter: "url('/assets/background/bg-footer.png')",
+        bgContentCourses: "url('/assets/background/bg-content-corses.png')",
+        bgCourses: "url('/assets/background/bg-courses.png')",
+        bgText: "url('/assets/background/bg-text.png')",
       },
       colors: {
         color: {
