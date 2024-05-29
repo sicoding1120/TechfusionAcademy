@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { Kanit, Inter } from "next/font/google";
 import {
-  useColorMode,
   Button,
   Flex,
   Box,
@@ -20,7 +19,6 @@ import {
   DrawerFooter,
   Stack,
   Text,
-  Circle,
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon, HamburgerIcon } from "@chakra-ui/icons";
 import dataRandom from "../data/json/dataRandom.json";
@@ -35,12 +33,8 @@ const inter = Inter({
   weight: ["100", "200", "300", "400", "500", "600"],
 });
 
-const Navbar = () => {
+const Navbar = ({handleToggle} : {handleToggle:any}) => {
   const [isDark, setIsDark] = useState(false)
-  const handleToggle = () => {
-    setIsDark(!isDark)
-  }
-
   return (
     <Flex
       as="nav"
@@ -51,7 +45,7 @@ const Navbar = () => {
     >
       <Link href={"/"} className="flex items-center cursor-pointer">
         <Image
-          src={"/assets/logo/logoWeb.png"}
+          src={"/TechfusionAcademy/assets/logo/logoWeb.png"}
           alt={""}
           width={100}
           height={100}
@@ -77,7 +71,7 @@ const Navbar = () => {
       <Box>
         <Flex className="flex items-center md:gap-4 gap-2">
           <Button
-            onClick={handleToggle}
+            onClick={() => { handleToggle ; setIsDark(!isDark) }}
             variant="ghost"
             colorScheme="teal"
             size="md"
