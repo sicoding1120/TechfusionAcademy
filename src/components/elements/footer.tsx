@@ -18,7 +18,7 @@ const icons = [
 const Footer = () => {
   return (
     <section className="w-full h-screen">
-      <div className="w-full h-3/6 md:px-24 px-4 bg-bgFooter">
+      <div className="w-full h-3/6 md:px-24 px-4 bg-bgFooter bg-white dark:bg-color-c7">
         <div className="w-full md:h-[330px] h-[200px] bg-bgButton bg-no-repeat bg-cover rounded-3xl flex flex-col md:flex-row items-center justify-center  overflow-hidden md:gap-56 relative md:top-52 top-72">
           <div className="md:w-1/2 w-full h-full md:p-8 flex flex-col justify-between items-center md:items-start py-4 px-4">
             <h2 className="text-2xl font-bold capitalize text-center md:text-start">
@@ -40,7 +40,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <footer className="md:px-24  w-full bg-color-c7 pt-40 pb-4 ">
+      <footer className="md:px-24  w-full bg-color-c7 dark:bg-color-c5/75 pt-40 pb-4 ">
         <div className="w-full h-full flex flex-col md:flex-row gap-8">
           <div className="md:w-3/6 w-full flex flex-col md:h-[300px] px-4 py-8 md:pt-8 md:pb-4 md:justify-between justify-center gap-6 md:gap-0">
             <div className="flex flex-col gap-2 text-center md:text-start">
@@ -73,7 +73,7 @@ const Footer = () => {
             ))}
           </div>
         </div>
-        <div className="border-t-4 border-white/5 w-full h-[20px] pt-6 pb-4 flex justify-center items-center text-white">
+        <div className="border-t-4 border-white/20 w-full h-[20px] pt-6 pb-4 flex justify-center items-center text-white">
           &copy;2024, TECHFUSION ACADEMY.
         </div>
       </footer>

@@ -48,7 +48,7 @@ useEffect(() => {
       align="center"
       justify="space-between"
     wrap="wrap"
-      className={`md:px-20 md:py-2 py-2 px-4 bg-color-c1/40 dark:text-color-c2 dark:bg-color-c7 ${kanit.className}`}
+      className={`md:px-20 md:py-2 py-2 px-4 bg-color-c1/40 dark:text-color-c4 dark:bg-color-c7 ${kanit.className}`}
     >
       <Link href={"/"} className="flex items-center cursor-pointer">
         <Image
@@ -56,7 +56,7 @@ useEffect(() => {
           alt={""}
           width={100}
           height={100}
-          className="w-14 h-14 md:w-28 md:h-28"
+          className="w-14 h-14 md:w-28 md:h-28 bg-red-500"
         />
         <Text
           className="md:text-2xl text-sm font-bold uppercase"

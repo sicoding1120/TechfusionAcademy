@@ -3,18 +3,18 @@
         "id": 1,
         "titleCard": "Training from expeart",
         "detail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "urlImage": "/assets/cardIcon1.png"
+        "urlImage": "/TechfusionAcademy/assets/icons/cardIcon1.png"
     },
     {
         "id": 2,
         "titleCard": "1.5K+ Video Course",
         "detail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "urlImage": "/assets/cardIcon2.png"
+        "urlImage": "/TechfusionAcademy/assets/icons/cardIcon2.png"
     },
     {
         "id": 3,
         "titleCard": "Occasional video update",
         "detail": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "urlImage": "/assets/cardIcon3.png"
+        "urlImage": "/TechfusionAcademy/assets/icons/cardIcon1.png"
     }
 ]

@@ -11,7 +11,7 @@ const About = () => {
       <Flex gap={24} flexDirection={"column"} className="w-full h-full">
         <Box>
           <Flex flexDirection={"column"} gap={6}>
-            <Text className="md:text-5xl text-3xl text-center">
+            <Text className="md:text-5xl text-3xl text-center dark:text-color-c4">
               More than just learning
             </Text>
             <Box>
@@ -27,7 +27,7 @@ const About = () => {
           </Flex>
         </Box>
         <Box className="w-full h-full ">
-          <Flex className="w-full h-full p-4 gap-14 flex-col md:flex-row">
+          <Flex className="w-full h-full p-4 gap-14 justify-center flex-col md:flex-row">
             {DataCard.map((items) => (
               <CardElement
                 title={items.titleCard}

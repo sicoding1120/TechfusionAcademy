@@ -18,7 +18,7 @@ const Instructor = () => {
                 {dataRandom.id.Text.data.type.Text[2].map((items, index) => (
                   <p
                     key={index}
-                    className="font-semibold md:text-6xl text-4xl text-center md:text-start"
+                    className="font-semibold md:text-6xl text-4xl text-center md:text-start dark:text-color-c4"
                   >
                     {items.text}
                   </p>
@@ -41,7 +41,7 @@ const Instructor = () => {
           </Flex>
           <Box className="md:w-1/2 w-full h-full  flex justify-center items-center">
             <Image
-              src={"/assets/olther/img-content2.png"}
+              src={"/TechfusionAcademy/assets/olther/img-content2.png"}
               alt={""}
               width={1000}
               height={1000}

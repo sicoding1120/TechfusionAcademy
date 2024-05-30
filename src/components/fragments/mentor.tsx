@@ -23,7 +23,7 @@ const Mentor = () => {
           justifyContent={"space-between"}
           align={"center"}
         >
-          <Text className="md:text-6xl text-3xl">Search your mentor.</Text>
+          <Text className="md:text-6xl text-3xl dark:text-color-c4">Search your mentor.</Text>
           <Box className="flex gap-4">
             <Circle
               className="bg-color-c1 size-14 text-black hover:bg-color-c2 hover:text-white"
@@ -51,7 +51,7 @@ const Mentor = () => {
                 className="flex flex-col gap-4"
               >
                 <Image src={mentor.image} alt={mentor.name} />
-                <Box className="flex flex-col text-center">
+                <Box className="flex flex-col text-center dark:text-color-c4">
                   <Text className="font-bold text-xl ">{mentor.name}</Text>
                   <Text>{mentor.title}</Text>
                 </Box>

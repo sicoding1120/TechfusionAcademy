@@ -5,7 +5,7 @@ import Image from "next/image";
 import dataRandom from "../data/json/dataRandom.json";
 
 const HeroSection = () => (
-  <section className="bg-bg1 bg-cover bg-center bg-no-repeat md:h-screen h-[110vh] w-full md:px-14 px-4">
+  <section className="bg-bg1  bg-cover bg-center bg-no-repeat md:h-screen h-[110vh] w-full md:px-14 px-4">
     <Topic />
   </section>
 );
@@ -15,7 +15,7 @@ const Topic = () => (
     align="center"
     justify="space-between"
     gap={3}
-    className="w-full md:h-[80vh] dark:text-color-c2 text-color-c5 h-screen md:flex-row flex-col-reverse"
+    className="w-full md:h-[80vh] text-color-c5 h-screen md:flex-row flex-col-reverse"
   >
     <Box className="md:w-1/2 w-full h-full p-4">
       <Box className="w-full h-full flex items-center md:px-4">
@@ -48,7 +48,7 @@ const Topic = () => (
     </Box>
     <Box className="md:w-1/2  w-full h-full flex justify-center items-center">
       <Image
-        src={"/assets/olther/img-content1.png"}
+        src={"/TechfusionAcademy/assets/olther/img-content1.png"}
         alt={""}
         width={600}
         height={600}
