@@ -142,7 +142,7 @@ const RightSection = ({ query }: { query: any }) => (
           className="w-16 h-16 bg-white rounded-md cursor-pointer"
         >
           <Image
-            src={"/assets/logoWeb.png"}
+            src={"/TechfusionAcademy/assets/logoWeb.png"}
             alt={""}
             width={100}
             height={100}

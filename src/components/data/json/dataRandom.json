@@ -56,11 +56,11 @@
           "2": {
             "data": [{
                 "title": "google",
-                "leftIconUrl": "/assets/google.png"
+                "leftIconUrl": "/TechfusionAcademy/assets/google.png"
               },
               {
                 "title": "Facebook",
-                "leftIconUrl": "/assets/Facebook.png"
+                "leftIconUrl": "/TechfusionAcademy/assets/Facebook.png"
               }
             ]
           }
