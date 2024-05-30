@@ -3,16 +3,12 @@ import type { AppProps } from "next/app";
 import { ChakraProvider } from "@chakra-ui/react";
 import HeadTemplate from "@/components/template/head";
 import AppShell from "@/components/template/AppShell/appShell";
-import { useState } from "react";
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [isDark, setIsDark] = useState(false)
-  console.log(isDark);
-
   return (
     <ChakraProvider>
       <HeadTemplate title={"my-web"} />
-      <AppShell handleToggle={() => setIsDark(!isDark)}>
+      <AppShell>
         <Component {...pageProps} />
       </AppShell>
     </ChakraProvider>

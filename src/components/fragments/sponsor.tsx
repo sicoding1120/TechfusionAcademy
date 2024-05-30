@@ -20,6 +20,7 @@ const Sponsor = () => {
               width={300}
               height={200}
               key={index}
+              className="opacity-30 hover:opacity-100 transition-all fill-color-c2"
             />
           ))}
         </Flex>

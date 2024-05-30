@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Kanit, Inter } from "next/font/google";
@@ -7,7 +7,6 @@ import {
   Button,
   Flex,
   Box,
-  useColorModeValue,
   IconButton,
   useDisclosure,
   Drawer,
@@ -33,15 +32,23 @@ const inter = Inter({
   weight: ["100", "200", "300", "400", "500", "600"],
 });
 
-const Navbar = ({handleToggle} : {handleToggle:any}) => {
-  const [isDark, setIsDark] = useState(false)
-  return (
+const Navbar = () => {
+
+    const [isDark, setIsDark] = useState(false);
+
+useEffect(() => {
+  if (isDark) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
+}, [isDark]);  return (
     <Flex
       as="nav"
       align="center"
       justify="space-between"
-      wrap="wrap"
-      className={`md:px-20 md:py-2 py-2 px-4 ${kanit.className}`}
+    wrap="wrap"
+      className={`md:px-20 md:py-2 py-2 px-4 bg-color-c1/40 dark:text-color-c2 dark:bg-color-c7 ${kanit.className}`}
     >
       <Link href={"/"} className="flex items-center cursor-pointer">
         <Image
@@ -52,7 +59,7 @@ const Navbar = ({handleToggle} : {handleToggle:any}) => {
           className="w-14 h-14 md:w-28 md:h-28"
         />
         <Text
-          className="md:text-lg text-sm font-bold uppercase"
+          className="md:text-2xl text-sm font-bold uppercase"
           display={{ base: "none", md: "block" }}
         >
           techfusion academy
@@ -61,7 +68,7 @@ const Navbar = ({handleToggle} : {handleToggle:any}) => {
       <Box className="md:block hidden">
         <Flex className="flex gap-6 capitalize ">
           {DataMenu.map((items, index) =>
-              <Link key={index} href={items.link} className="cursor-pointer">
+              <Link key={index} href={items.link} className="cursor-pointer text-xl hover:text-color-c2 transition-all">
                 {items.title}
               </Link>
             )
@@ -71,7 +78,7 @@ const Navbar = ({handleToggle} : {handleToggle:any}) => {
       <Box>
         <Flex className="flex items-center md:gap-4 gap-2">
           <Button
-            onClick={() => { handleToggle ; setIsDark(!isDark) }}
+            onClick={() => { setIsDark(!isDark) }}
             variant="ghost"
             colorScheme="teal"
             size="md"

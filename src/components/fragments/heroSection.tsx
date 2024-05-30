@@ -15,7 +15,7 @@ const Topic = () => (
     align="center"
     justify="space-between"
     gap={3}
-    className="w-full md:h-[80vh] h-screen md:flex-row flex-col-reverse"
+    className="w-full md:h-[80vh] dark:text-color-c2 text-color-c5 h-screen md:flex-row flex-col-reverse"
   >
     <Box className="md:w-1/2 w-full h-full p-4">
       <Box className="w-full h-full flex items-center md:px-4">

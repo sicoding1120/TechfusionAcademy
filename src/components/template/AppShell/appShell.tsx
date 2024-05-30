@@ -8,11 +8,11 @@ const navigationHide = [
   "/404",
   "/auth/[slug]",
 ];
-const AppShell = ({ children, handleToggle }: { children: React.ReactNode;handleToggle:any }) => {
+const AppShell = ({ children}: { children: React.ReactNode; }) => {
   const { pathname } = useRouter();
   return (
     <>
-      {!navigationHide.includes(pathname) && <Navbar handleToggle={handleToggle} />}
+      {!navigationHide.includes(pathname) && <Navbar/>}
       {children}
       {!navigationHide.includes(pathname) && <Footer />}
     </>
