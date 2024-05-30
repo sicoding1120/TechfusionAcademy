@@ -12,8 +12,8 @@ const config: Config = {
       backgroundImage: {
         bg1: "url('/TechfusionAcademy/assets/background/bg-1.png')",
         bg2: "url('/TechfusionAcademy/assets/background/bg-2.png')",
-        bgLogin: "url('/TechfusionAcademy/assets/background/bg-Login.png')",
-        bgLogin2: "url('/TechfusionAcademy/assets/background/bg-Login2.png')",
+        bgLogin: "url('/TechfusionAcademy/assets/background/bg-login.png')",
+        bgLogin2: "url('/TechfusionAcademy/assets/background/bg-login2.png')",
         bgLogin3:
           "url('/TechfusionAcademy/assets/background/bg-responsive.png')",
         bgLogin4:

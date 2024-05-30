@@ -175,16 +175,16 @@
       "sponsor": {
         "dataName": "sponsor",
         "data": [{
-            "urlLogo": "/assets/logo1.png"
+            "urlLogo": "/TechfusionAcademy/assets/logo1.png"
           },
           {
-            "urlLogo": "/assets/logo2.png"
+            "urlLogo": "/TechfusionAcademy/assets/logo2.png"
           },
           {
-            "urlLogo": "/assets/logo3.png"
+            "urlLogo": "/TechfusionAcademy/assets/logo3.png"
           },
           {
-            "urlLogo": "/assets/logo4.png"
+            "urlLogo": "/TechfusionAcademy/assets/logo4.png"
           }
         ]
       },

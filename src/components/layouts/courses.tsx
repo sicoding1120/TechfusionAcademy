@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+
+import React, { useEffect, useState } from "react";
 import { Kanit } from "next/font/google";
 import { Circle } from "@chakra-ui/react";
 import Image from "next/image";
@@ -9,37 +11,38 @@ import CardCourses from "../elements/cardCourses";
 import dataClass from "../data/json/class.json";
 import { IoIosArrowDown } from "react-icons/io";
 import CardClass from "../elements/cardClass";
+import Pricing from "../elements/pricing";
 
 const kanit = Kanit({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600"],
 });
 
-const text = [
+const textCourses = [
   {
     title: "Mini Bootcamp",
-    img: "/assets/icons/icon-bootcamp.png",
+    img: "/TechfusionAcademy/assets/icons/icon-bootcamp.png",
   },
   {
     title: "Bootcamp",
-    img: "/assets/icons/icon-bootcamp2.png",
+    img: "/TechfusionAcademy/assets/icons/icon-bootcamp2.png",
   },
 ];
 const icons = [
   {
-    src: "/assets/icons/icons-courses1.png",
+    src: "/TechfusionAcademy/assets/icons/icons-courses1.png",
     id: 1,
   },
   {
-    src: "/assets/icons/icons-courses2.png",
+    src: "/TechfusionAcademy/assets/icons/icons-courses2.png",
     id: 2,
   },
   {
-    src: "/assets/icons/icons-courses3.png",
+    src: "/TechfusionAcademy/assets/icons/icons-courses3.png",
     id: 3,
   },
   {
-    src: "/assets/icons/icons-courses4.png",
+    src: "/TechfusionAcademy/assets/icons/icons-courses4.png",
     id: 4,
   },
 ];
@@ -121,6 +124,27 @@ const Courses = () => {
       setValidation(!validation);
     }
   };
+  const [text, setText] = useState("");
+  const textsToType: any = ["web developer", "UI/UX design", "app mobile"];
+  const typingSpeed = 180; // Kecepatan mengetik (dalam milidetik)
+  const intervalTime = 10; // Waktu antara perubahan teks (dalam milidetik)
+
+  useEffect(() => {
+    let index = 0;
+    let textIndex = 0;
+
+    const interval = setInterval(() => {
+      setText(textsToType[textIndex].substring(0, index));
+
+      if (++index > textsToType[textIndex].length) {
+        setTimeout(() => {
+          index = 0;
+          textIndex = (textIndex + 1) % textsToType.length;
+        }, intervalTime);
+      }
+    }, typingSpeed);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <main className={`${kanit.className}`}>
@@ -130,7 +154,7 @@ const Courses = () => {
             Mulai Belajar Skill
           </h1>
           <div className="md:px-6 md:py-4 bg-bgText text-green-900 text-4xl bg-no-repeat rounded-2xl px-3 py-2">
-            UI/UX Design
+            {text}
           </div>
           <h4 className="font-bold text-white md:text-6xl text-md">
             Jadilah Talenta Digital Handal
@@ -216,7 +240,7 @@ const Courses = () => {
       <section className="w-full h-full py-4 flex flex-col md:px-14 justify-center items-center gap-14 px-4">
         <div className="flex flex-col w-full h-full justify-center items-center">
           <div className="flex justify-center items-end md:gap-4 gap-2 md:p-3 p-2 bg-color-c10 md:w-[360px] w-[280px] rounded-2xl relative top-8">
-            {text.map((items, index) => (
+            {textCourses.map((items, index) => (
               <button
                 key={index}
                 className={`flex md:gap-3 gap-2 items-center md:px-4 py-2 px-2 rounded-xl bg-color-c9/70 text-md text-color-c10 hover:bg-color-c9 transition-all text-sm md:text-md`}
@@ -400,21 +424,21 @@ const Courses = () => {
                 {items.isImg === true ? (
                   <>
                     <Image
-                      src={"/assets/olther/img1.png"}
+                      src={"/TechfusionAcademy/assets/olther/img1.png"}
                       alt={""}
                       width={260}
                       height={400}
                       className="relative z-[1] md:left-14 left-2 hover:md:scale-110 hover:scale-150 scale-125 md:scale-100 transition-all hover:z-[4]"
                     />
                     <Image
-                      src={"/assets/olther/img2.png"}
+                      src={"/TechfusionAcademy/assets/olther/img2.png"}
                       alt={""}
                       width={290}
                       height={400}
                       className="relative z-[2] hover:md:scale-110 hover:scale-150 scale-125 md:scale-100 transition-all hover:z-[4]"
                     />
                     <Image
-                      src={"/assets/olther/img3.png"}
+                      src={"/TechfusionAcademy/assets/olther/img3.png"}
                       alt={""}
                       width={320}
                       height={400}
@@ -423,7 +447,7 @@ const Courses = () => {
                   </>
                 ) : (
                   <Image
-                    src={"/assets/olther/img4.png"}
+                    src={"/TechfusionAcademy/assets/olther/img4.png"}
                     alt={""}
                     width={400}
                     height={400}
@@ -508,6 +532,11 @@ const Courses = () => {
           })}
         </div>
       </section>
+      <div className="flex justify-center w-full gap-">
+        <Pricing />
+        <Pricing className="scale-110" />
+        <Pricing />
+      </div>
     </main>
   );
 };

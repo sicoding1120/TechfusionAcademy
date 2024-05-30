@@ -6,10 +6,10 @@
                 "subTitle": "Join TECHFUSION's intensive training programs with the guidance of experienced mentors.",
                 "card": [{
                     "title": "Bootcamp Job-Ready Full Stack UI / UX Design ",
-                    "img": "/assets/olther/content-bootcamp.png"
+                    "img": "/TechfusionAcademy/assets/olther/content-bootcamp.png"
                 }, {
                     "title": "Bootcamp Job-Ready Full Stack Web Development",
-                    "img": "/assets/olther/content-bootcamp2.png"
+                    "img": "/TechfusionAcademy/assets/olther/content-bootcamp2.png"
                 }]
             },
             "miniBootcamp": {
@@ -17,10 +17,10 @@
                 "subTitle": "Take part in an intensive, short-term Mini Bootcamp under the guidance of experienced Mentors.",
                 "card": [{
                     "title": "Mini Bootcamp Kickstarter - Intro to UI / UX Design ",
-                    "img": "/assets/olther/content-miniBootcamp.png"
+                    "img": "/TechfusionAcademy/assets/olther/content-miniBootcamp.png"
                 }, {
                     "title": "Mini Bootcamp Kickstarter -Intro to UX Research ",
-                    "img": "/assets/olther/content-miniBootcamp2.png"
+                    "img": "/TechfusionAcademy/assets/olther/content-miniBootcamp2.png"
                 }]
 
             }

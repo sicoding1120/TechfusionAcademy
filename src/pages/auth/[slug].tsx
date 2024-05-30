@@ -31,7 +31,7 @@ const Authentification = () => {
                 className="w-12 h-12 bg-white rounded-md cursor-pointer"
               >
                 <Image
-                  src={"/assets/logoWeb.png"}
+                  src={"/TechfusionAcademy/assets/logoWeb.png"}
                   alt={""}
                   width={100}
                   height={100}
