@@ -10,6 +10,11 @@ interface Icons {
   imageUrl: string;
   placeholder: string;
   error?: any;
+  image: any;
+  classNameInput:any;
+  password: any;
+  passwordValid: any;
+  valueInput: any;
 }
 
 const Input = ({
@@ -19,30 +24,13 @@ const Input = ({
   key,
   imageUrl,
   placeholder,
+  image,
+  classNameInput,
+  password,
+  passwordValid,
+  valueInput
+
 }: Icons) => {
-  const image = <Image src={imageUrl} alt={""} width={20} height={20} />;
-  const [classNameInput, setClassNameInput] = useState("");
-  const [password, setPassword] = useState("");
-  const valueInput = (e: any) => {
-    setClassNameInput(
-      e.target.value === "" ||
-        !e.target.value.includes("@") ||
-        !e.target.value.includes("gmail.com")
-        ? "input-error"
-        : "input-success"
-    );
-    return classNameInput;
-  };
-  const simbol = ["!", "#", "$", "%", "&"];
-  const passwordValid = (e: any) => {
-    setPassword(
-      e.target.value.length < 8 || e.target.value === ""
-        ? "input-error"
-        : simbol.some((s) => e.target.value.includes(s))
-        ? "input-success"
-        : "input-warning"
-    );
-  };
 
   return (
     <label
@@ -64,8 +52,9 @@ const Input = ({
             className={type === "password" ? "grow" : "grow"}
             placeholder={placeholder}
             onChange={passwordValid}
+            required
           />
-        </label>
+        </label>  
       ) : (
         <input
           type={type || "text"}
@@ -75,7 +64,8 @@ const Input = ({
               : "grow"
           }
           placeholder={placeholder}
-          onChange={type === "email" ? valueInput : undefined}
+            onChange={type === "email" ? valueInput : undefined}
+            required
         />
       )}
       {type === "password" ? (

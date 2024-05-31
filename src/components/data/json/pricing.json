@@ -1,0 +1,59 @@
+[
+    {
+        "title": "trial",
+        "price": 0,
+        "fitur": [{
+            "title": "limited class"
+        }, {
+            "title": "limited mentor"
+        }, {
+            "title": "no sertification"
+        }, {
+            "title": "don't save program"
+        },{
+            "title": "7 days trial"
+        }]
+    },
+    {
+        "title": "pro",
+        "price": 30,
+        "fitur": [{
+            "title": "unlimited class"
+        }, {
+            "title": "limited mentor"
+        }, {
+            "title": "free sertification"
+        }, {
+            "title": "save program"
+        },{
+            "title": "30 days trial"
+        },{
+            "title": "unlimited fitures"
+        },{
+            "title": "techfuion title"
+        }]
+    },
+    {
+        "title": "vip",
+        "price": 60,
+        "fitur": [{
+            "title": "unlimited class"
+        }, {
+            "title": "unlimited mentor"
+        }, {
+            "title": "free sertification"
+        }, {
+            "title": "save program"
+        },{
+            "title": "30 days trial"
+        },{
+            "title": "unlimited fitures"
+        },{
+            "title": "techfuion title vip"
+        },{
+            "title": "techfusion ticket"
+        },{
+            "title": "scholarship offer at university"
+        }]
+    }
+]

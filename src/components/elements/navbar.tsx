@@ -33,21 +33,22 @@ const inter = Inter({
 });
 
 const Navbar = () => {
+  const [isDark, setIsDark] = useState(false);
 
-    const [isDark, setIsDark] = useState(false);
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [isDark]);
 
-useEffect(() => {
-  if (isDark) {
-    document.documentElement.classList.add("dark");
-  } else {
-    document.documentElement.classList.remove("dark");
-  }
-}, [isDark]);  return (
+  return (
     <Flex
       as="nav"
       align="center"
       justify="space-between"
-    wrap="wrap"
+      wrap="wrap"
       className={`md:px-20 md:py-2 py-2 px-4 bg-color-c1/40 dark:text-color-c4 dark:bg-color-c7 ${kanit.className}`}
     >
       <Link href={"/"} className="flex items-center cursor-pointer">
@@ -67,18 +68,23 @@ useEffect(() => {
       </Link>
       <Box className="md:block hidden">
         <Flex className="flex gap-6 capitalize ">
-          {DataMenu.map((items, index) =>
-              <Link key={index} href={items.link} className="cursor-pointer text-xl hover:text-color-c2 transition-all">
-                {items.title}
-              </Link>
-            )
-          }
+          {DataMenu.map((items, index) => (
+            <Link
+              key={index}
+              href={items.link}
+              className="cursor-pointer text-xl hover:text-color-c2 transition-all"
+            >
+              {items.title}
+            </Link>
+          ))}
         </Flex>
       </Box>
       <Box>
         <Flex className="flex items-center md:gap-4 gap-2">
           <Button
-            onClick={() => { setIsDark(!isDark) }}
+            onClick={() => {
+              setIsDark(!isDark);
+            }}
             variant="ghost"
             colorScheme="teal"
             size="md"
@@ -125,16 +131,11 @@ const SideBar = () => {
           <DrawerHeader>Menu</DrawerHeader>
           <DrawerBody>
             <Stack spacing={4}>
-              {DataMenu.map((items, index) =>
-                  <Link
-                    key={index}
-                    href={items.link}
-                    className="cursor-pointer"
-                  >
-                    {items.title}
-                  </Link>
-                )
-              }
+              {DataMenu.map((items, index) => (
+                <Link key={index} href={items.link} className="cursor-pointer">
+                  {items.title}
+                </Link>
+              ))}
             </Stack>
           </DrawerBody>
           <Box display={{ base: "block", md: "none" }}>

@@ -48,16 +48,16 @@ const CardClass = ({
           <div className=" w-full h-full flex flex-col justify-between">
             <h5 className="text-2xl font-semibold capitalize">{title}</h5>
             <div className="w-full grid grid-cols-2 py-4 gap-4">
-              <div className="bg-color-c10/40 py-2 px-4 flex justify-center items-center rounded-xl gap-3">
+              <div className="bg-color-c10/40 py-2 md:px-4 px-2 flex justify-center items-center rounded-xl gap-3">
                 <FaBook size={18} className="fill-color-c10" />
-                <p className="font-semibold text-md capitalize text-color-c10">
+                <p className="font-semibold md:text-md text-sm capitalize text-color-c10">
                   {jmlMateri} materi
                 </p>
               </div>
-              <div className="bg-color-c10/40 py-2 px-4 flex justify-center items-center rounded-xl gap-3">
+              <div className="bg-color-c10/40 py-2 md:px-4 px-2 flex justify-center items-center rounded-xl md:gap-3 gap-1">
                 <FaStar size={18} className="fill-color-c10" />
-                <p className="font-semibold text-md capitalize text-color-c10">
-                  {jmlSkillPoint} TECHPoin
+                <p className="font-semibold md:text-md text-sm capitalize text-color-c10">
+                  {jmlSkillPoint} techPoin
                 </p>
               </div>
             </div>

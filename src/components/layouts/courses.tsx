@@ -12,6 +12,8 @@ import dataClass from "../data/json/class.json";
 import { IoIosArrowDown } from "react-icons/io";
 import CardClass from "../elements/cardClass";
 import Pricing from "../elements/pricing";
+import dataPricing from "../data/json/pricing.json";
+import BtnPricing from "../elements/btnPricing";
 
 const kanit = Kanit({
   subsets: ["latin"],
@@ -145,9 +147,9 @@ const Courses = () => {
     }, typingSpeed);
     return () => clearInterval(interval);
   }, []);
-
+  const [ismultiplication, setIsMultiplication] = useState(false);
   return (
-    <main className={`${kanit.className}`}>
+    <main className={`${kanit.className} dark:bg-color-c7 dark:text-color-c4`}>
       <header className="w-full md:h-screen h-[70vh] bg-bgContentCourses md:px-14 bg-fixed md:pb-36">
         <div className="p-8  w-full h-full flex flex-col justify-center items-center md:gap-4 gap-6">
           <h1 className="font-bold text-white md:text-5xl text-4xl">
@@ -218,7 +220,7 @@ const Courses = () => {
               alur belajar kelas
             </h2>
           </div>
-          <div className="grid grid-cols-4 gap-8 py-6 px-6">
+          <div className="grid md:grid-cols-4 grid-cols-1 md:gap-8 py-6 px-6">
             {operator.map((items, index) => (
               <div
                 className="w-full h-[300px] flex flex-col gap-4  items-center text-center"
@@ -266,7 +268,7 @@ const Courses = () => {
               </p>
             </div>
             <div className="md:w-3/5 w-full h-full py-14">
-              <div className="w-full h-full flex flex-col md:flex-row gap-8 px-14">
+              <div className="w-full h-full flex flex-col md:flex-row gap-8 md:px-14 px-6">
                 {bootcamp === true
                   ? DataBootcamp.data.type.bootcamp.card.map((items, index) => (
                       <div
@@ -335,14 +337,14 @@ const Courses = () => {
                 />
               </div>
             </div>
-            <h3 className="text-xl font-semibold text-gray-500">
+            <h3 className="md:text-xl text-center md:text-start font-semibold text-gray-500">
               kamu memiliki{" "}
               <span className="text-red-500">{dataClass.length}</span> kelas
               untuk anda
             </h3>
           </div>
           <div className="w-full h-full py-4">
-            <div className=" w-full h-screen grid grid-cols-3 gap-4">
+            <div className=" w-full md:h-screen h-full grid grid-cols-1 md:grid-cols-3 gap-4">
               {validation === true
                 ? filter &&
                   filter.map((items: any, index: any) => (
@@ -459,9 +461,9 @@ const Courses = () => {
           ))}
         </div>
       </section>
-      <section className="w-full h-full px-14 py-8">
-        <div className="bg-blue-500 w-full h-[500px] rounded-3xl flex overflow-hidden">
-          <div className="w-[100px] bg-color-c9 h-full flex flex-col items-center justify-center gap-8">
+      <section className="w-full h-full md:px-14 px-2 py-8">
+        <div className=" w-full md:h-[500px] h-full rounded-3xl flex flex-col md:flex-row overflow-hidden">
+          <div className="md:w-[100px] w-full bg-color-c9 h-full flex md:flex-col flex-row items-center justify-center gap-8 py-8 md:py-0">
             {icons.map((items, index) => (
               <div
                 className={`w-14 h-14 rounded-lg flex justify-center items-center hover:bg-color-c10 transition-all bg-color-c10/50`}
@@ -485,13 +487,13 @@ const Courses = () => {
               >
                 {items.istopic === false ? null : (
                   <div
-                    className={`w-full h-full px-8 py-3 flex gap-8 ${
+                    className={`w-full h-full md:px-8 px-2 py-3 flex flex-col md:flex-row gap-8 ${
                       items.istopic ? "block" : "hidden"
                     }`}
                   >
                     {items.asideTopic.map((items: any, index: any) => (
                       <div
-                        className="w-1/2 h-full bg-white rounded-2xl shadow-xl overflow-hidden"
+                        className="md:w-1/2 w-full h-full bg-white rounded-2xl shadow-xl overflow-hidden"
                         key={index}
                       >
                         <Image
@@ -501,9 +503,9 @@ const Courses = () => {
                           height={400}
                           className="w-full h-2/5 bg-red-500"
                         />
-                        <div className="w-full h-3/5 flex flex-col justify-between py-4 px-4">
-                          <div className="flex flex-col gap-3">
-                            <h4 className="text-2xl">{items.title}</h4>
+                        <div className="w-full md:h-3/5 h-full flex flex-col justify-between py-4 px-4">
+                          <div className="flex flex-col md:gap-3 gap-8">
+                            <h4 className="md:text-2xl text-lg">{items.title}</h4>
                             {items.isDecs === true ? (
                               <div className="w-full h-full text-blue-600">
                                 {items.description.map(
@@ -532,11 +534,25 @@ const Courses = () => {
           })}
         </div>
       </section>
-      <div className="flex justify-center w-full gap-">
-        <Pricing />
-        <Pricing className="scale-110" />
-        <Pricing />
-      </div>
+      <section className="flex flex-col justify-center w-full md:gap-24 gap-8 md:py-24 py-14">
+        <h3 className="text-center w-full text-6xl font-semibold">pricing</h3>
+        <div className="flex gap-8 w-full h-full justify-center capitalize">
+          <BtnPricing title="mounth" handleButtonPricing={() => setIsMultiplication(false)} />
+          <BtnPricing title="years" handleButtonPricing={() => setIsMultiplication(true)} />
+        </div>
+        <div className="flex  flex-col md:flex-row px-6 md:px-0 justify-center items-center w-full gap-8">
+          {dataPricing.map((items, index) => (
+            <Pricing
+              time={ismultiplication === true ? "years" : "mounth"}
+              price={ismultiplication === true ? items.price * 12 : items.price}
+              type={items.title}
+              fiturAccess={items.fitur}
+              key={index}
+              className={index % 2 === 0 ? "" : "md:scale-110 scale-100"}
+            />
+          ))}
+        </div>
+      </section>
     </main>
   );
 };

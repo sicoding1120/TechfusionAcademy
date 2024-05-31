@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
@@ -6,6 +6,9 @@ import { Kanit, Inter } from "next/font/google";
 import { Circle } from "@chakra-ui/react";
 import dataRandom from "../../components/data/json/dataRandom.json";
 import Input from "@/components/elements/input";
+import InputFromControl from "@/components/elements/formControlInput";
+import InputNormal from "@/components/elements/inputNormal";
+import user from "../../../data/user.json"
 
 const kanit = Kanit({
   subsets: ["latin"],
@@ -15,9 +18,94 @@ const inter = Inter({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600"],
 });
+const validOfId = [
+  ...Array.from({ length: 9 }, (_, i) => (i + 1).toString()), // Angka 1 sampai 9
+  ...Array.from({ length: 8 }, (_, i) => String.fromCharCode(97 + i)), // Huruf a sampai h
+];
+
+
 
 const Authentification = () => {
   const { query } = useRouter();
+  const router = useRouter()
+  const [name, setName] = useState("");
+  // const [email, setEmail] = useState("");
+  // const [password, setPassword] = useState("");
+  const [handleSubmitState, setHandleSubmitState] = useState({});
+  const [response, setResponse] = useState("");
+  // const image = <Image src={imageUrl} alt={""} width={20} height={20} />;
+  const [classNameInput, setClassNameInput] = useState("");
+  const [password, setPassword] = useState("");
+  const [count,setCount]= useState("")
+  const [input, setInput] = useState("");
+  const valueInput = (e: any) => {
+    setClassNameInput(
+      e.target.value === "" ||
+        !e.target.value.includes("@") ||
+        !e.target.value.includes("gmail.com")
+        ? "input-error"
+        : "input-success"
+    );
+    return classNameInput;
+  };
+
+  const simbol = ["!", "#", "$", "%", "&"];
+  const passwordValid = (e: any) => {
+    const { value, name: inputName } = e.target;
+    setInput(e.target.value);
+    setPassword(
+      e.target.value.length < 8 || e.target.value === ""
+        ? "input-error"
+        : simbol.some((s) => e.target.value.includes(s))
+        ? "input-success"
+        : "input-warning"
+    );
+  }
+
+const createIdRandom = () => {
+  // Tentukan panjang acak antara 3 dan 5
+  const idLength = Math.floor(Math.random() * (16 - 3 + 1)) + 3;
+  let id = "";
+
+  // Buat ID dengan panjang yang ditentukan
+  for (let i = 0; i < idLength; i++) {
+    const randomIndex = Math.floor(Math.random() * validOfId.length);
+    id += validOfId[randomIndex];
+  }
+
+  setCount(id)
+  return id;
+  };
+
+// Contoh penggunaan
+  const handleSubmit = async (event: any) => {
+    event.preventDefault();
+    if (!count) {
+      const newId = createIdRandom();
+      setCount(newId);
+      alert(`server error harap ulagin langkah tadi`)
+    } else {
+      localStorage.setItem(`user_${count}`, JSON.stringify({ name, password }));
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, password, count }),
+      });
+      const data = await res.json();
+      setResponse(data.message);
+      setName("");
+      setPassword("");
+    }
+  };
+
+  const handleUser = (event: any) => {
+    event.preventDefault();
+    const login = user.filter((items) => items.name == name && items.password == password)
+    router.push(`/e/me/${login.map((item) => item.count)}/dashboard`)
+  }
+
   return (
     <section className={`${kanit.className} w-full h-screen md:bg-white flex`}>
       <div
@@ -76,35 +164,83 @@ const Authentification = () => {
             </div>
           ) : null}
           <div className="flex flex-col gap-8">
-            {query.slug === "register" ? (
-              <div className="flex flex-col gap-4">
-                {dataRandom.id.input.type[1].data.map((items, index) => (
-                  <Input
-                    placeholder={`enter your ${items.name}`}
-                    key={index}
-                    iconFirst={true}
-                    imageUrl={items.iconUrl}
-                    type={items.type}
-                    iconLast={false}
-                  />
-                ))}
-              </div>
-            ) : (
-              <div className="flex flex-col gap-4">
-                {dataRandom.id.input.type[2].data.map((items, index) => (
-                  <Input
-                    placeholder={`enter your ${items.name}`}
-                    key={index}
-                    iconFirst={true}
-                    imageUrl={items.iconUrl}
-                    type={items.type}
-                    iconLast={false}
-                  />
-                ))}
-              </div>
-            )}
+            <form
+              action=""
+              onSubmit={query.slug === "register" ? handleSubmit : undefined}
+            >
+              {query.slug === "register" ? (
+                <div className="flex flex-col gap-4">
+                  {/* {dataRandom.id.input.type[1].data.map((items, index) => (
+                    <Input
+                      placeholder={`enter your ${items.name}`}
+                      key={index}
+                      iconFirst={true}
+                      imageUrl={items.iconUrl}
+                      type={items.type}
+                      iconLast={false}
+                      image={undefined}
+                      classNameInput={classNameInput}
+                      password={password}
+                      passwordValid={passwordValid}
+                      valueInput={valueInput}
+                    />
+                  ))} */}
+                  <InputNormal
+                    type={"text"}
+                    onchange={(e: any) => setName(e.target.value)}
+                    value={name}
+                  >
+                    d
+                  </InputNormal>
+                  <InputNormal
+                    type={"password"}
+                    onchange={(e: any) => setPassword(e.target.value)}
+                    value={password}
+                  >
+                    d
+                  </InputNormal>
+                </div>
+              ) : (
+                <div className="flex flex-col gap-4">
+                  {/* {dataRandom.id.input.type[2].data.map((items, index) => (
+                    <Input
+                      placeholder={`enter your ${items.name}`}
+                      key={index}
+                      iconFirst={true}
+                      imageUrl={items.iconUrl}
+                      type={items.type}
+                      iconLast={false}
+                      image={undefined}
+                      classNameInput={undefined}
+                      password={undefined}
+                      passwordValid={undefined}
+                      valueInput={undefined}
+                    />
+                  ))} */}
+                  <InputNormal
+                    type={"text"}
+                    onchange={(e: any) => setName(e.target.value)}
+                    value={name}
+                  >
+                    d
+                  </InputNormal>
+
+                  <InputNormal
+                    type={"password"}
+                    onchange={(e: any) => setPassword(e.target.value)}
+                    value={password}
+                  >
+                    d
+                  </InputNormal>
+                </div>
+              )}
+            </form>
             <div className="w-full flex flex-col gap-4 text-center">
-              <button className="btn w-full bg-bgButton bg-cover  text-white">
+              <button
+                className="btn w-full bg-bgButton bg-cover  text-white"
+                type="submit"
+                onClick={query.slug === "register" ? handleSubmit : handleUser}
+              >
                 {query.slug === "register" ? "Register" : "Log in"}
               </button>
               <div className="md:text-color-text-2 text-white/70 flex gap-2 justify-center">
@@ -179,3 +315,5 @@ const RightSection = ({ query }: { query: any }) => (
 );
 
 export default Authentification;
+
+
