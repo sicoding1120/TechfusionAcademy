@@ -103,7 +103,16 @@ const createIdRandom = () => {
   const handleUser = (event: any) => {
     event.preventDefault();
     const login = user.filter((items) => items.name == name && items.password == password)
-    router.push(`/e/me/${login.map((item) => item.count)}/dashboard`)
+    console.log(login)
+    if (!login) {
+      router.push("/auth/register");
+      confirm("akun belum terdaftar, anda akan di lempar ke halaman register");
+    }
+    else if (login) {
+      router.push(`/e/me/sjbfas/dashboard`);
+    } else {
+    confirm("akun belum terdaftar, anda akan di lempar ke halaman register");
+    }
   }
 
   return (

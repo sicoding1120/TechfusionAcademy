@@ -7,7 +7,8 @@ const Dynamic = () => {
     const { query } = useRouter();
     console.log(query.user?.at(2))
     const filter = user.filter((items) => items.count == query.user?.at(1))
-    console.log(filter)
+    // if()
+    console.log(!filter)
     return (
         <Dashboard>
             {filter.map((item, index) => (

@@ -22,6 +22,7 @@ import {
 import { MoonIcon, SunIcon, HamburgerIcon } from "@chakra-ui/icons";
 import dataRandom from "../data/json/dataRandom.json";
 import DataMenu from "../data/json/menu.json";
+import { useRouter } from "next/router";
 
 const kanit = Kanit({
   subsets: ["latin"],
@@ -32,8 +33,11 @@ const inter = Inter({
   weight: ["100", "200", "300", "400", "500", "600"],
 });
 
+const pathnameBgColorHide = ["/","/e"]
+
 const Navbar = () => {
   const [isDark, setIsDark] = useState(false);
+  const { pathname } = useRouter();
 
   useEffect(() => {
     if (isDark) {
@@ -49,7 +53,7 @@ const Navbar = () => {
       align="center"
       justify="space-between"
       wrap="wrap"
-      className={`md:px-20 md:py-2 py-2 px-4 bg-color-c1/40 dark:text-color-c4 dark:bg-color-c7 ${kanit.className}`}
+      className={`md:px-20 md:py-2 py-2 px-4 ${pathnameBgColorHide.includes(pathname) ? "bg-color-c1/40": "bg-white"} dark:text-color-c4 dark:bg-color-c7 ${kanit.className}`}
     >
       <Link href={"/"} className="flex items-center cursor-pointer">
         <Image

@@ -12,10 +12,14 @@ const kanit = Kanit({
 
 const Dynamic = () => {
   const { query } = useRouter();
-
+const router = useRouter()
   const filterData = Class.filter(
     (items) => items.headerTitle == query.slug?.at(1)
   );
+
+  const handleClass = ()=> {
+    alert("ok")
+  }
   return (
     <main>
       {filterData.map((items, index) => (
@@ -33,8 +37,8 @@ const Dynamic = () => {
                   <div className={`text-3xl text-red-500`}>
                     {items.price === 0 ? "free" : ` Rp ${items.price}`}
                   </div>
-                  <button className="btn w-[240px] text-xl bg-color-c9 hover:bg-color-c10 text-color-c10 hover:text-color-c9">
-                    join class
+                  <button onClick={items.price !== 0 ? handleClass : () => router.push(`/class/material/detail/${items.title}/lesson`)} className="btn w-[240px] text-xl bg-color-c9 hover:bg-color-c10 text-color-c10 hover:text-color-c9">
+                    {items.price === 0 ? "join class" : "beli class"}
                   </button>
                 </div>
               </div>
@@ -51,27 +55,29 @@ const Dynamic = () => {
               </div>
             </div>
           </section>
-          <section className={`w-full h-[170px] p-8 ${kanit.className}`}>
-            <div className="bg-color-c9 w-full h-full rounded-3xl py-2 px-14">
-              <div className="w-full h-full flex justify-between">
-                <div className=" w-3/5 h-full flex gap-3 py-4">
-                  <div className="bg-red-200 w-1/6 h-full"></div>
-                  <p className="text-xl text-color-c10">
+          <section className={`w-full md:h-[170px] h-full md:p-8 p-4 ${kanit.className}`}>
+            <div className="bg-color-c9 w-full h-full rounded-3xl py-2 md:px-14 px-6">
+              <div className="w-full h-full flex flex-col md:flex-row justify-between">
+                <div className="md:w-3/5 w-full h-full flex flex-col md:flex-row justify-center items-center gap-3 py-4">
+                  <div className="md:w-16 w-24 h-full">
+                    <Image src={"/assets/icons/skilbadge-icon1.png"} alt={""} width={200} height={200} className="w-full h-full" />
+                  </div>
+                  <p className="text-xl text-color-c10 text-center md:text-start">
                     You can join this class and get your TECHBadge (Certificate)
                     for passing the class!
                   </p>
                 </div>
-                <div className=" w-2/5 h-full py-4 px-8">
-                  <button className="btn w-full h-full bg-color-c10 text-white border-none hover:bg-color-c2 hover:text-color-c10 capitalize text-xl">
+                <div className=" ,md:w-2/5 w-full h-full py-4 md:px-8">
+                  <button className="btn w-full h-full bg-color-c10 text-white border-none hover:bg-color-c2 hover:text-color-c10 capitalize md:text-xl">
                     Lihat Selengkapnya
                   </button>
                 </div>
               </div>
             </div>
           </section>
-          <section className="w-full h-full px-8 py-8">
-            <div className="w-full h-full flex gap-8 justify-center">
-              <div className="w-1/2 h-full flex flex-col gap-2 border border-black rounded-3xl">
+          <section className="w-full h-full md:px-8 px-4 py-8">
+            <div className="w-full h-full flex flex-col md:flex-row gap-8 justify-center">
+              <div className="md:w-1/2 w-full h-full flex flex-col gap-2 border border-black rounded-3xl">
                 <div className="w-full h-full rounded-3xl px-6 py-8 flex flex-col gap-2">
                   <h3 className="text-2xl font-bold text-color-c10">
                     About Class
@@ -93,7 +99,7 @@ const Dynamic = () => {
                   </div>
                 </div>
               </div>
-              <div className="w-1/2 h-screen flex flex-col gap-6">
+              <div className="md:w-1/2 w-full h-screen flex flex-col gap-6">
                 <div className="border border-black w-full rounded-3xl p-4 flex flex-col gap-6 pb-8">
                   <h3 className="text-color-c10 text-xl font-bold">
                     Class Detail
@@ -122,7 +128,7 @@ const Dynamic = () => {
                     </div>
                   </div>
                 </div>
-                <div className="bg-bgDetailClass w-full h-[28%] rounded-3xl">
+                <div className="bg-bgDetailClass w-full md:h-[28%] h-full rounded-3xl">
                   <div className="w-full h-full flex justify-center items-center bg-black/50 flex-col p-24 gap-4 rounded-3xl">
                     <h3 className="text-3xl text-white font-semibold">
                       Locked

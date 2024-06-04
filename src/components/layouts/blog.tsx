@@ -352,15 +352,15 @@ const sortBlogsByLatestViews = () => {
         </div>
       </section>
       <section className="w-full h-full mt-36">
-        <div className="w-full h-full flex">
-          <div className="w-3/5 px-8 flex flex-col gap-6">
+        <div className="w-full h-full flex flex-col md:lflex-row">
+          <div className="md:w-3/5 w-full md:px-8 px-4 flex flex-col gap-6">
             <div className=" pb-8 border-b-4 border-black">
               <h2 className="text-4xl capitalize ">lastest posts</h2>
             </div>
-            <div className="w-full h-full grid grid-cols-2 gap-6">
+            <div className="w-full h-full grid md:grid-cols-2 grid-cols-1 gap-6">
               {latestPosts.map((items: any, index: any) => (
                 <div
-                  className="w-full h-[500px] flex flex-col gap-4"
+                  className="w-full md:h-[500px] h-full flex flex-col gap-4"
                   key={index}
                 >
                   <div className="w-full h-1/2">
@@ -393,18 +393,18 @@ const sortBlogsByLatestViews = () => {
               ))}
             </div>
           </div>
-          <div className="w-2/5 px-8 flex flex-col gap-14 h-full">
+          <div className="md:w-2/5 w-full px-8 flex flex-col gap-14 h-full">
             <div className="w-full h-full flex flex-col gap-2">
               <div className=" pb-8 border-b-4 border-black">
                 <h2 className="text-4xl capitalize ">popular posts</h2>
               </div>
               <div className="w-full h-full grid grid-cols-1 gap-4">
                 {sortBlog.map((items: any, index: any) => (
-                  <div key={index} className="w-full h-[200px] flex gap-4">
-                    <div className="w-1/3 text-[8rem] flex h-full text-gray-500">
+                  <div key={index} className="w-full md:h-[200px] h-full flex flex-col md:flex-row md:gap-4">
+                    <div className="md:w-1/3 w-full text-[8rem] flex h-full text-gray-500">
                       0 <span>{index + 1}</span>
                     </div>
-                    <div className="w-2/3 flex flex-col py-8 gap-2">
+                    <div className="md:w-2/3 w-full flex flex-col md:py-8 gap-2">
                       <h3 className="text-2xl">{items.title}</h3>
                       <p className="text-color-text-2">{items.subtitle}</p>
                       <div className="flex items-center gap-2">
