@@ -16,6 +16,7 @@
           "iframe[allow]"
         ]
       }
-    ]
+    ],
+    "typescript-config/consistent-casing": "off"
   }
 }

@@ -48,3 +48,31 @@
 .button:active {
   transform: scale(0.97);
 }
+   /* index.css atau App.css */
+   .react-calendar__navigation {
+     @apply flex justify-between items-center p-4;
+   }
+
+   .react-calendar__navigation button {
+     @apply bg-none border-none text-lg cursor-pointer;
+   }
+
+   .react-calendar__month-view__weekdays {
+     @apply text-center font-bold text-gray-500;
+   }
+
+   .react-calendar__tile {
+     @apply max-w-full p-4 text-center rounded-full transition-colors duration-300;
+   }
+
+   .react-calendar__tile--active {
+     @apply bg-green-400 text-white;
+   }
+
+   .react-calendar__tile--now {
+     @apply bg-yellow-400 text-white;
+   }
+
+   .highlight {
+     @apply bg-green-400 text-white !important;
+   }

@@ -4,20 +4,21 @@ import materialClass from "../../components/data/json/materiOfClass.json";
 import BtnNext from "@/components/elements/btnNext";
 
 const Dynamic = () => {
-  const [id, setId] = useState(0)
+  const [id, setId] = useState(0);
   const { query } = useRouter();
+  const router = useRouter()
   console.log(query.class?.at(2));
 
   useEffect(() => {
     filter();
   });
 
-  console.log(id)
+  console.log(id);
   if (id > 13) {
-    setId(id - 1)
-  } else { 
+    setId(id - 1);
+  } else {
     if (id < 0) {
-      setId(id + 1)
+      setId(id + 1);
     }
   }
 
@@ -72,14 +73,32 @@ const Dynamic = () => {
                     voluptas error quia accusantium placeat consectetur.
                   </p>
                 </div>
-
+                <div className="w-full h-[40vh] border-t-2 border-black mt-4 p-6">
+                  <div className="w-full h-full text-center justify-center items-center flex flex-col gap-14 px-36">
+                    <div className="flex flex-col gap-4 items-center">
+                      <h2 className="text-3xl font-bold ">
+                        {"Let's test your knowledge with practice!"}
+                      </h2>
+                      <p className="w-[45rem] text-xl">
+                        After reading the material, it is time for you to
+                        measure your knowledge of this material. You can still
+                        access this material when doing the exercises.
+                      </p>
+                    </div>
+                    <button onClick={() => router.push(`exericise/${materialItem.title}`)} className="btn w-[20rem] capitalize text-color-c10 text-xl font-bold hover:bg-color-c2 hover:text-color-c1 bg-color-c9">
+                      start exercise
+                    </button>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
       </section>
       <section className="w-full px-6 py-2 h-[8vh] bg-color-c2 rounded-xl flex justify-between items-center">
         <BtnNext reverse={true} onclick={() => setId(id - 1)} />
-        <span className="text-xl font-semibold py-2 px-4 bg-color-c7 text-color-c3">page {id + 1}</span>
+        <span className="text-xl font-semibold py-2 px-4 bg-color-c7 text-color-c3">
+          page {id + 1}
+        </span>
         <BtnNext reverse={false} onclick={() => setId(id + 1)} />
       </section>
     </main>
