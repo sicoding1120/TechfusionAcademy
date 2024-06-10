@@ -1,6 +1,7 @@
-import Image from "next/image";
+// import Image from "next/image";
 import React from "react";
 import { Kanit } from "next/font/google";
+import Sidebar from "../elements/sidebar";
 
 const kanit = Kanit({
   subsets: ["latin"],
@@ -9,31 +10,11 @@ const kanit = Kanit({
 
 const Dashboard = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main className={`${kanit.className} flex bg-gray-100`}>
-      <section className="w-1/5 h-screen fixed p-2">
-        <div className="bg-color-c7 w-full h-full rounded-xl px-3 py-3">
-          <header className="flex items-center gap-4">
-            <Image
-              src={"/assets/logo/logoWeb.png"}
-              alt={""}
-              width={200}
-              height={200}
-              className="w-16 h-16 bg-white rounded-md"
-            />
-            <div className="flex flex-col">
-              <h1 className="text-xl uppercase text-color-c4 font-bold">
-                techfusion
-              </h1>
-              <h2 className="text-xl uppercase text-color-c4 font-bold">
-                academy
-              </h2>
-            </div>
-          </header>
-          <nav className="flex flex-col"></nav>
-        </div>
+    <main className={`${kanit.className} flex flex-col md:flex-row bg-gray-100`}>
+      <section className="md:w-1/5 hidden md:block h-screen fixed p-2">
+        <Sidebar/>
       </section>
-      <section className="w-full h-[300vh] flex flex-col ml-[20%] py-2">
-        {/* <Nav /> */}
+      <section className="w-full h-full flex flex-col md:ml-[20%] py-2">
         {children}
       </section>
     </main>
@@ -41,3 +22,4 @@ const Dashboard = ({ children }: { children: React.ReactNode }) => {
 };
 
 export default Dashboard;
+//w-1/5 h-screen fixed p-2

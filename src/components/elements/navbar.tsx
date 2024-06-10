@@ -136,7 +136,7 @@ const SideBar = () => {
           <DrawerBody>
             <Stack spacing={4}>
               {DataMenu.map((items, index) => (
-                <Link key={index} href={items.link} className="cursor-pointer">
+                <Link key={index} href={items.link} className="cursor-pointer text-xl">
                   {items.title}
                 </Link>
               ))}

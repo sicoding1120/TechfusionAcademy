@@ -4,6 +4,7 @@ import Class from "@/components/data/json/class.json";
 import Image from "next/image";
 import { Kanit } from "next/font/google";
 import { FaClipboardList, FaMedal } from "react-icons/fa";
+import { toast } from "react-toastify";
 
 const kanit = Kanit({
   subsets: ["latin"],
@@ -12,32 +13,70 @@ const kanit = Kanit({
 
 const Dynamic = () => {
   const { query } = useRouter();
-const router = useRouter()
+  const router = useRouter();
   const filterData = Class.filter(
     (items) => items.headerTitle == query.slug?.at(1)
   );
 
-  const handleClass = ()=> {
-    alert("ok")
-  }
+  const handleClass = () => {
+    const CustomToast = ({ closeToast }: any) => {
+      return (
+        <div className="flex flex-col gap-4">
+          <p>kamu belum beli kelas , ayo beli kelas sekarang</p>
+          <div className="flex gap-4">
+            <button
+              className="w-1/2 btn"
+              onClick={() => {
+                handleConfirm();
+                closeToast();
+              }}
+            >
+              Yes
+            </button>
+            <button onClick={closeToast} className="btn w-1/2">
+              No
+            </button>
+          </div>
+        </div>
+      );
+    };
+    toast(<CustomToast />);
+    const handleConfirm = () => {
+      router.push(
+        `/pre/courses/class/get/${filterData.map(
+          (item: any) => item.title
+        )}/checkout `
+      );
+    };
+  };
   return (
-    <main>
+    <main className=" w-full h-full">
       {filterData.map((items, index) => (
         <>
           <section
             key={index}
             className={`py-6 px-2 w-full md:h-[60vh] h-full ${kanit.className}`}
           >
-            <div className="w-full h-full flex md:flex-row flex-col-reverse">
+            <div className="w-full h-full flex md:flex-row flex-col-reverse md:px-14">
               <div className="md:w-2/5 w-full h-full py-4">
-                <div className="md:px-8 px-4 w-full h-full flex flex-col md:gap-6 gap-2 justify-center items-center md:items-start">
+                <div className="md:px-8px-4 w-full h-full flex flex-col md:gap-6 gap-2 justify-center items-center md:items-start">
                   <h1 className="md:text-6xl text-3xl capitalize">
                     {items.title}
                   </h1>
                   <div className={`text-3xl text-red-500`}>
                     {items.price === 0 ? "free" : ` Rp ${items.price}`}
                   </div>
-                  <button onClick={items.price !== 0 ? handleClass : () => router.push(`/class/material/detail/${items.title}/lesson`)} className="btn w-[240px] text-xl bg-color-c9 hover:bg-color-c10 text-color-c10 hover:text-color-c9">
+                  <button
+                    onClick={
+                      items.price !== 0
+                        ? handleClass
+                        : () =>
+                            router.push(
+                              `/class/material/detail/${items.title}/lesson`
+                            )
+                    }
+                    className="btn w-[240px] text-xl bg-color-c9 hover:bg-color-c10 text-color-c10 hover:text-color-c9"
+                  >
                     {items.price === 0 ? "join class" : "beli class"}
                   </button>
                 </div>
@@ -49,26 +88,39 @@ const router = useRouter()
                     alt={""}
                     width={300}
                     height={300}
-                    className="w-full h-full rounded-3xl bg-red-500"
+                    className="w-full h-full rounded-3xl"
                   />
                 </div>
               </div>
             </div>
           </section>
-          <section className={`w-full md:h-[170px] h-full md:p-8 p-4 ${kanit.className}`}>
+          <section
+            className={` w-full md:h-[170px] h-full md:p-8 p-4 ${kanit.className}`}
+          >
             <div className="bg-color-c9 w-full h-full rounded-3xl py-2 md:px-14 px-6">
               <div className="w-full h-full flex flex-col md:flex-row justify-between">
                 <div className="md:w-3/5 w-full h-full flex flex-col md:flex-row justify-center items-center gap-3 py-4">
                   <div className="md:w-16 w-24 h-full">
-                    <Image src={"/assets/icons/skilbadge-icon1.png"} alt={""} width={200} height={200} className="w-full h-full" />
+                    <Image
+                      src={"/assets/icons/skilbadge-icon1.png"}
+                      alt={""}
+                      width={200}
+                      height={200}
+                      className="w-full h-full"
+                    />
                   </div>
                   <p className="text-xl text-color-c10 text-center md:text-start">
                     You can join this class and get your TECHBadge (Certificate)
                     for passing the class!
                   </p>
                 </div>
-                <div className=" ,md:w-2/5 w-full h-full py-4 md:px-8">
-                  <button className="btn w-full h-full bg-color-c10 text-white border-none hover:bg-color-c2 hover:text-color-c10 capitalize md:text-xl">
+                <div className="md:w-2/5 w-full h-full py-4 md:px-8">
+                  <button
+                    onClick={() =>
+                      router.push(`/pre/courses/class/badge/${items.title}/checkout`)
+                    }
+                    className="btn w-full h-full bg-color-c10 text-white border-none hover:bg-color-c2 hover:text-color-c10 capitalize md:text-xl"
+                  >
                     Lihat Selengkapnya
                   </button>
                 </div>
@@ -99,29 +151,29 @@ const router = useRouter()
                   </div>
                 </div>
               </div>
-              <div className="md:w-1/2 w-full h-screen flex flex-col gap-6">
+              <div className="md:w-1/2 w-full md:h-screen h-full flex flex-col gap-6">
                 <div className="border border-black w-full rounded-3xl p-4 flex flex-col gap-6 pb-8">
                   <h3 className="text-color-c10 text-xl font-bold">
                     Class Detail
                   </h3>
                   <div className="flex flex-col gap-4">
-                    <div className="flex gap-4 w-[444px] items-center text-2xl">
+                    <div className="flex gap-4 md:w-[444px] items-center text-2xl">
                       <div>
                         <FaClipboardList
                           size={40}
                           className="fill-yellow-400"
                         />
                       </div>
-                      <div className="flex w-[444px] gap-4 font-semibold px-2">
+                      <div className="flex md:w-[444px] gap-4 font-semibold px-2">
                         {items.classDetail.materials}
                         <p>Material</p>
                       </div>
                     </div>
-                    <div className="flex gap-4 w-[444px] items-center text-2xl">
+                    <div className="flex gap-4 md:w-[444px] items-center text-2xl">
                       <div>
                         <FaMedal size={40} className="fill-yellow-400" />
                       </div>
-                      <div className="flex w-[444px] gap-4 font-semibold px-2">
+                      <div className="flex  md:w-[444px] gap-4 font-semibold px-2">
                         {items.classDetail.points}
                         <p>Max TECHPoin</p>
                       </div>

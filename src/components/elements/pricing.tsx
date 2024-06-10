@@ -7,17 +7,20 @@ const Pricing = ({
   type,
   fiturAccess,
   key,
-  time
+  time,
+  onclick
 }: {
   className?: string;
   price: number;
   type: any;
   fiturAccess: any;
     key: any;
-  time: any;
+    time: any;
+  onclick:any
 }) => {
   return (
     <div
+      onClick={onclick}
       className={`w-full mb-8 lg:mb-0 max-w-[400px] h-full dark:text-color-c4 transition-all border-2 rounded-xl border-color-c2 ${className}`}
       key={key}
     >

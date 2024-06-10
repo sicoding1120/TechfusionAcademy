@@ -17,7 +17,6 @@ const Dynamic = () => {
   }, []);
 
   const { query } = useRouter();
-  console.log(query.slug);
   const handle = () => {
     const filter = BlogData.filter((items: any) => items.id == query.slug);
     const viewsUp = sessionStorage.getItem(`views_${query.slug}`) || 0;
@@ -39,17 +38,16 @@ const Dynamic = () => {
     }
     return popularBlog;
   };
-console.log(popularBlog);
   return (
     <main>
       {filter.map((items :any, index: any) => (
-        <section key={index} className="w-full h-screen">
-          <div className="w-full h-screen py-4">
+        <section key={index} className="w-full md:h-screen h-full">
+          <div className="w-full h-full md:h-screen py-4">
             <div className="w-full h-1/5 px-8 py-8 flex flex-col gap-4">
-              <h1 className="text-5xl font-semibold">{items.title}</h1>
-              <div className="flex items-center gap-2">
+              <h1 className="md:text-5xl text-4xl text-center md:text-start font-semibold">{items.title}</h1>
+              <div className="flex items-center justify-center md:justify-start gap-2">
                 <Circle size={4} className="bg-color-c9 border border-black" />
-                <p className="text-color-text-2">
+                <p className="text-color-text-2 text-sm md:text-md">
                   by{" "}
                   <span className="text-black font-semibold">
                     {items.author}

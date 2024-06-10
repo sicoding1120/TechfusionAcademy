@@ -28,16 +28,18 @@ const SaveClass = (items: any) => {
   const Class = sessionStorage.getItem("class");
   if (!!Class === false) {
     sessionStorage.setItem("class", JSON.stringify([items]));
-  } else {
+  }
+  else {
     const data = JSON.parse(Class);
     const filter = data.filter((item: any) => item.id === items.id);
     console.log("filter", filter);
     if (filter?.length === 0) {
       sessionStorage.setItem("class", JSON.stringify([...data, items]));
     }
+    window.location.reload();
   }
-  window.location.reload();
-};
+}
+  
 const UnSaveClass = (items: any) => {
   const hapusClass = sessionStorage.getItem("class");
   if (!!hapusClass === false) {

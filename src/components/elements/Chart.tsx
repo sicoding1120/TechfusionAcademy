@@ -33,7 +33,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 
 const Chart = () => {
   return (
-    <div className="p-4 bg-white rounded-lg">
+    <div className="md:p-4 py-2 md:py-0 px-1 md:px-0 bg-white rounded-lg">
       <div className="flex justify-between items-center mb-4">
         <div>
           <h2 className="text-xl font-bold">Hours Activity</h2>
@@ -46,7 +46,7 @@ const Chart = () => {
           </select>
         </div>
       </div>
-      <ResponsiveContainer width="100%" height={300}>
+      <ResponsiveContainer width="" className={"md:w-full w-[90%]"} height={300}>
         <BarChart data={data}>
           <XAxis dataKey="day" />
           <YAxis />

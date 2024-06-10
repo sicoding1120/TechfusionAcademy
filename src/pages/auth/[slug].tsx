@@ -27,39 +27,10 @@ const Authentification = () => {
   const { query } = useRouter();
   const router = useRouter();
   const [name, setName] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [handleSubmitState, setHandleSubmitState] = useState({});
   const [response, setResponse] = useState("");
-  // const image = <Image src={imageUrl} alt={""} width={20} height={20} />;
-  // const [classNameInput, setClassNameInput] = useState("");
   const [password, setPassword] = useState("");
   const [count, setCount] = useState("");
-  // const [input, setInput] = useState("");
-  // const valueInput = (e: any) => {
-  //   setClassNameInput(
-  //     e.target.value === "" ||
-  //       !e.target.value.includes("@") ||
-  //       !e.target.value.includes("gmail.com")
-  //       ? "input-error"
-  //       : "input-success"
-  //   );
-  //   return classNameInput;
-  // };
-
-  // const simbol = ["!", "#", "$", "%", "&"];
-  // const passwordValid = (e: any) => {
-  //   const { value, name: inputName } = e.target;
-  //   setInput(e.target.value);
-  //   setPassword(
-  //     e.target.value.length < 8 || e.target.value === ""
-  //       ? "input-error"
-  //       : simbol.some((s) => e.target.value.includes(s))
-  //       ? "input-success"
-  //       : "input-warning"
-  //   );
-  // }
-
+  const [register, setIsRegister] = useState(false);
   const createIdRandom = () => {
     // Tentukan panjang acak antara 3 dan 5
     const idLength = Math.floor(Math.random() * (16 - 3 + 1)) + 3;
@@ -78,17 +49,20 @@ const Authentification = () => {
   // Contoh penggunaan
   const handleSubmit = async (event: any) => {
     event.preventDefault();
-    let id:any;
     if (!count) {
       const newId = createIdRandom();
       setCount(newId);
-      toast.warning("server error harap ulangi langkah tadi")
+      toast.warning("server error harap ulangi langkah tadi");
     } else {
       if (!name || !password) {
-        toast("nama atau password harus di isi")
+        toast("nama atau password harus di isi");
       } else {
-        toast.success("akun anda terbuat")
-        localStorage.setItem(`user_@${name}`, JSON.stringify({ name, password }));
+        setIsRegister(!false);
+        toast.success("akun anda terbuat");
+        localStorage.setItem(
+          `user_@${name}`,
+          JSON.stringify([{ name, password, register }])
+        );
         setName("");
         setPassword("");
       }
@@ -96,47 +70,30 @@ const Authentification = () => {
   };
   const handleUser = (event: any) => {
     event.preventDefault();
-    let arr:any = [];
-    const login = arr;
     const nameU = localStorage.getItem(`user_@${name}`);
-    const file = JSON.parse([nameU] as never)
-arr.push(file)
-      if (login.length > 0) {
-        toast.success("berhasil login");
-        router.push(`/e/account/me/@${name}/dashboard`)
-      } else if (!name || !password) {
-        toast(`masukan ${!password ? "password" : ""} ${!name ? "name" : ""} terlebih dahulu`)
-      } else {
-        const CustomToast = ({ closeToast }: any) => (
-          <div className="flex flex-col gap-4">
-            <p>akun belum terdaftar pergi ke register</p>
-            <div className="flex gap-4">
-              <button
-                className="w-1/2 btn"
-                onClick={() => {
-                  handleConfirm();
-                  closeToast();
-                }}
-              >
-                Yes
-              </button>
-              <button onClick={closeToast} className="btn w-1/2">
-                No
-              </button>
-            </div>
-          </div>
-        );
-        toast.error(<CustomToast />);
-        const handleConfirm = () => {
-          // Tindakan yang dilakukan saat pengguna mengklik "Yes"
-          router.push("/auth/register");
-          toast.success("anda di arahkan ke register", {
-            position: "top-left",
-          });
-        }
+    let file;
+    if (nameU) {
+      file = JSON.parse(nameU as never);
+    } else {
+      file = { data: [], isLoggin: false };
+    }
+    if (!file.isLoggin) {
+      if (!file.data) {
+        file.data = [];
+      }
+      file.data.push({ name, password });
+      file.isLoggin = true;
+      localStorage.setItem(`user_@${name}`, JSON.stringify(file));
+    }
+    if (file) {
+      if (!localStorage.getItem(`user_@${name}`)) {
+        localStorage.setItem(`user_@${name}`, JSON.stringify({ file ,isloggin:true}));
+      }
+      sessionStorage.setItem(`user`, JSON.stringify({file, isloggin:true}))
+      router.push(`/e/account/me/@${name}/dashboard`);
+      toast.success("berhasil login");
     }
   };
-
   return (
     <section className={`${kanit.className} w-full h-screen md:bg-white flex`}>
       <div

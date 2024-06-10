@@ -8,6 +8,8 @@ const navigationHide = [
   "/404",
   "/auth/[slug]",
   "/e/[[...user]]",
+  "/pre/[[...checkout]]",
+  "/exercise/[[...exercise]]",
 ];
 const AppShell = ({ children}: { children: React.ReactNode; }) => {
   const { pathname } = useRouter();

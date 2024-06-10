@@ -170,8 +170,8 @@ const sortBlogsByLatestViews = () => {
           </div>
         </div>
       </header>
-      <section className="w-full h-20"></section>
-      <section className="px-14 flex flex-col gap-14 py-14">
+      {/* <section className="w-full h-20"></section> */}
+      {/* <section className="px-14 flex flex-col gap-14 py-14">
         <h2 className="text-3xl ">favorit blog</h2>
         {hasil === true ? (
           <div className="w-full h-30vh">
@@ -219,7 +219,7 @@ const sortBlogsByLatestViews = () => {
               ))}
           </div>
         )}
-      </section>
+      </section> */}
       <section className="w-full h-full md:px-8 px-4 py-14">
         <div className="px-4">
           <InputSearch
@@ -227,13 +227,13 @@ const sortBlogsByLatestViews = () => {
             placeholder="search your blog...."
           />
           <div className="flex justify-between">
-            <h1>
+            {/* <h1>
               {newChange.length === 0
                 ? `tidak ada hasil pencarian`
                 : `hasil pencarian ${`untuk ${
                     boolean == false ? DataBlog.length : newChange.length
                   } blog`}`}
-            </h1>
+            </h1> */}
             <h2>
               kami menyediakan{" "}
               <span className="text-red-500">{DataBlog.length}</span> blog untuk
@@ -434,11 +434,11 @@ const sortBlogsByLatestViews = () => {
               </div>
               <div className="w-full h-full grid grid-cols-1 gap-4">
                 {latestViews.map((items: any, index: any) => (
-                  <div key={index} className="w-full h-[200px] flex gap-4">
-                    <div className="w-1/3 text-[8rem] flex h-full text-gray-500">
+                  <div key={index} className="w-full h-[200px] flex flex-col md:flex-row gap-4">
+                    <div className="md:w-1/3 w-full text-[8rem] flex h-full text-gray-500">
                       0 <span>{index + 1}</span>
                     </div>
-                    <div className="w-2/3 flex flex-col py-8 gap-2">
+                    <div className="md:w-2/3 w-full flex flex-col md:py-8 gap-2">
                       <h3 className="text-2xl">{items.title}</h3>
                       <p className="text-color-text-2">{items.subtitle}</p>
                       <div className="flex items-center gap-2">

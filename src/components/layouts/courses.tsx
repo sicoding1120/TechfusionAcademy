@@ -11,9 +11,6 @@ import CardCourses from "../elements/cardCourses";
 import dataClass from "../data/json/class.json";
 import { IoIosArrowDown } from "react-icons/io";
 import CardClass from "../elements/cardClass";
-import Pricing from "../elements/pricing";
-import dataPricing from "../data/json/pricing.json";
-import BtnPricing from "../elements/btnPricing";
 
 const kanit = Kanit({
   subsets: ["latin"],
@@ -147,7 +144,6 @@ const Courses = () => {
     }, typingSpeed);
     return () => clearInterval(interval);
   }, []);
-  const [ismultiplication, setIsMultiplication] = useState(false);
   return (
     <main className={`${kanit.className} dark:bg-color-c7 dark:text-color-c4`}>
       <header className="w-full md:h-screen h-[70vh] bg-bgContentCourses md:px-14 bg-fixed md:pb-36">
@@ -532,25 +528,6 @@ const Courses = () => {
               </CardCourses>
             );
           })}
-        </div>
-      </section>
-      <section className="flex flex-col justify-center w-full md:gap-24 gap-8 md:py-24 py-14">
-        <h3 className="text-center w-full text-6xl font-semibold">pricing</h3>
-        <div className="flex gap-8 w-full h-full justify-center capitalize">
-          <BtnPricing title="mounth" handleButtonPricing={() => setIsMultiplication(false)} />
-          <BtnPricing title="years" handleButtonPricing={() => setIsMultiplication(true)} />
-        </div>
-        <div className="flex  flex-col md:flex-row px-6 md:px-0 justify-center items-center w-full gap-8">
-          {dataPricing.map((items, index) => (
-            <Pricing
-              time={ismultiplication === true ? "years" : "mounth"}
-              price={ismultiplication === true ? items.price * 12 : items.price}
-              type={items.title}
-              fiturAccess={items.fitur}
-              key={index}
-              className={index % 2 === 0 ? "" : "md:scale-110 scale-100"}
-            />
-          ))}
         </div>
       </section>
     </main>
