@@ -145,7 +145,7 @@ const sortBlogsByLatestViews = () => {
   return (
     <main className={`w-full h-full ${kanit.className} dark:bg-color-c7`}>
       <header className="w-full h-full bg-color-c8 hidden md:block">
-        <div className="w-full h-[60vh] flex flex-row-reverse">
+        <div className="w-full h-[60vh] flex flex-row-reverse overflow-hidden">
           <div className="w-3/5 bg-bgBlog h-full pl-64 pr-40 py-10">
             <div className="w-full">
               <Image
