@@ -103,7 +103,7 @@ const Navbar = () => {
       wrap="wrap"
       className={`md:px-20 md:py-2 py-2 px-4 ${
         pathnameBgColorHide.includes(pathname) ? "bg-color-c1/40" : "bg-white"
-      } dark:text-color-c4 dark:bg-color-c7 ${kanit.className}`}
+      } dark:text-color-c4 text-black dark:bg-color-c7 ${kanit.className}`}
     >
       <Link href={"/"} className="flex items-center cursor-pointer">
         <Image
@@ -152,8 +152,12 @@ const Navbar = () => {
             {logined == true ? (
               <div className="dropdown">
                 <div className=" placeholder" tabIndex={0} role="button">
-                  <div className="bg-neutral text-neutral-content rounded-full w-12 h-12 flex justify-center items-center">
-                    <span className="text-xl uppercase">{user.at(0)}</span>
+                  <div className="flex justify-center items-center">
+                    <div className="w-10 h-10 bg-color-c2  text-white flex justify-center items-center rounded-full">
+                      <span className="text-3xl uppercase">
+                        {user.at(0)}  
+                      </span>
+                    </div>
                   </div>
                 </div>
                 <ul
@@ -167,8 +171,9 @@ const Navbar = () => {
                   </li>
                   <li>
                     <button onClick={handleLogout}>
-                      <BiLogOut/>
-                      log out</button>
+                      <BiLogOut />
+                      log out
+                    </button>
                   </li>
                 </ul>
               </div>

@@ -5,7 +5,8 @@ export default function Document() {
   return (
     <Html lang="en" className='scroll-smooth'>
       <Head>
-        <link rel="icon" type="image/x-icon" href="/assets/logo/favicon.png" />
+        <link rel="icon" type="image/x-icon" href="favicon.png" />
+        <title>Techfusion Academy</title>
       </Head>
       <body>
         <Main />

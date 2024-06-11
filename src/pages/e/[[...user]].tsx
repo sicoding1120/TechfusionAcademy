@@ -48,9 +48,9 @@ const Dynamic = () => {
 
 const HeadTopic = ({ dataUserUpdate }: { dataUserUpdate: any }) => {
     return (
-    <header className="w-full md:h-24 h-full px-4 md:py-4 py-8 flex justify-between items-center">
+    <header className="w-full md:h-24 h-full px-4 md:py-4 py-8 flex justify-between items-center md:items-start">
       {dataUserUpdate.map((item: any, index: any) => (
-        <div key={index} className="flex flex-col md:flew-row gap-4 md:gap-0 justify-between w-full items-center">
+        <div key={index} className="flex flex-col md:flex-row gap-4 md:gap-0 justify-between w-full items-center">
           <div>
             <h2 className="text-2xl capitalize font-semibold">
               {" "}

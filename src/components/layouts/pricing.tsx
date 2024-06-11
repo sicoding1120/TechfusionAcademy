@@ -17,8 +17,8 @@ const Price = () => {
     const [ismultiplication, setIsMultiplication] = useState(false);
     const router = useRouter()
   return (
-    <main className="dark:bg-color-c7 dark:text-white">
-      <section className="w-full h-full  flex flex-col md:gap-24 gap-8 md:px-14 px-4">
+    <main className="dark:bg-color-c7 dark:text-white px-4">
+      <section className="w-full h-full  flex flex-col md:gap-24 gap-8 md:px-14 px-4 border-b-2 border-black pb-24">
         <h2 className="text-6xl font-bold capitalize text-center">{"diskon dan promo"}</h2>
         <section className="grid md:grid-cols-5 grid-cols-2 gap-4 w-full h-full">
           {diskon.map((item, index) => (
@@ -27,7 +27,7 @@ const Price = () => {
               key={index}
             >
               <Image
-                src={`/assets/coupons/diskon${item.price}.png`}
+                src={`/TechfusionAcademy/assets/coupons/diskon${item.price}.png`}
                 alt=""
                 height={200}
                 width={200}
@@ -37,8 +37,11 @@ const Price = () => {
           ))}
         </section>
       </section>
+      <section className="w-full h-full md:mt-24 pt-4 border-black">
+        <CoursesPricing />
+      </section>
       <section className="flex flex-col justify-center w-full md:gap-24 gap-8 md:py-24 py-14">
-        <div className="flex gap-8 w-full h-full justify-center capitalize">
+        <div className="flex gap-8 w-full h-full bg-bgFooter justify-center capitalize py-24">
           <BtnPricing
             title="mounth"
             handleButtonPricing={() => setIsMultiplication(false)}
@@ -61,9 +64,6 @@ const Price = () => {
             />
           ))}
         </div>
-      </section>
-      <section className="w-full h-full md:px-14">
-        <CoursesPricing />
       </section>
     </main>
   );

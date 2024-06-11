@@ -13,8 +13,8 @@
         }]
     },
     {
-        "title": "pro",
-        "price": 30,
+        "title": "vip",
+        "price": 800.000,
         "fitur": [{
             "title": "unlimited class"
         }, {
@@ -32,8 +32,8 @@
         }]
     },
     {
-        "title": "vip",
-        "price": 60,
+        "title": "pro",
+        "price": 300.000,
         "fitur": [{
             "title": "unlimited class"
         }, {

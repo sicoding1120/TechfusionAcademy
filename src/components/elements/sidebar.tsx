@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import {
   FaHome,
@@ -17,7 +18,7 @@ const Sidebar = () => {
     <div className="h-full w-full bg-color-c7 text-white hidden md:flex flex-col justify-between rounded-xl px-3 py-3">
       <div>
         <div className="flex items-center mb-8">
-          <div className="text-3xl font-bold">Eduplex</div>
+          <Link href={"/"} className="text-3xl font-bold">Techfusion</Link>
         </div>
         <ul>
           <li className="mb-4">

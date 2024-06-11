@@ -31,7 +31,7 @@ const Footer = () => {
           <div className="md:w-1/2 h-full pl-36 hidden md:block">
             <div className="w-full h-full md:flex justify-center items-center hidden">
               <Image
-                src={"/assets/icons/bubles.png"}
+                src={"/TechfusionAcademy/assets/icons/bubles.png"}
                 alt={""}
                 width={300}
                 height={300}

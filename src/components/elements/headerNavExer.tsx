@@ -2,16 +2,19 @@ import React from "react";
 import { FaBars, FaBook } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const HeaderNav = () => {
+  const router = useRouter()
   return (
     <header className="bg-color-c9 p-4 flex items-center justify-between rounded-lg">
       <div className="md:flex items-center hidden">
         <Image
           src="/assets/logo/logoWeb.png"
           alt="Logo"
-          className="h-10 w-10 mr-4"
+          className="h-10 w-10 mr-4 cursor-pointer"
           width={20}
+          onClick={() => router.push("/")}
           height={20}
         />
         <div>

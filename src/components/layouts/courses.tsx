@@ -273,7 +273,9 @@ const Courses = () => {
                           className="w-full h-2/5 "
                         />
                         <div className="w-full h-3/5 px-6 flex flex-col justify-center items-center py-4 gap-16">
-                          <h4 className="text-xl">{items.title}</h4>
+                          <h4 className="text-xl dark:text-black">
+                            {items.title}
+                          </h4>
                           <button className="btn w-full bg-color-c9 hover:bg-color-c2">
                             See Details
                           </button>
@@ -294,7 +296,9 @@ const Courses = () => {
                             className="w-full h-2/5 "
                           />
                           <div className="w-full h-3/5 px-6 flex flex-col justify-between items-center py-4 gap-16">
-                            <h4 className="text-xl">{items.title}</h4>
+                            <h4 className="text-xl dark:text-black">
+                              {items.title}
+                            </h4>
                             <button className="btn w-full bg-color-c9 hover:bg-color-c2">
                               See Details
                             </button>
@@ -306,7 +310,7 @@ const Courses = () => {
             </div>
           </div>
         </div>
-        <section className="w-full h-full px-6 bg-black/5 py-8 rounded-xl">
+        <section className="w-full h-full px-6 py-8 rounded-xl">
           <div className="flex flex-col gap-6">
             <h1 className="text-4xl font-bold  capitalize text-gray-500 dark:text-color-c4">
               class for you
@@ -334,7 +338,7 @@ const Courses = () => {
             </h3>
           </div>
           <div className="w-full h-full py-4">
-            <div className=" w-full md:h-screen h-full grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="w-full md:h-full h-full grid grid-cols-1 md:grid-cols-3 gap-4">
               {validation === true
                 ? filter &&
                   filter.map((items: any, index: any) => (
@@ -370,6 +374,9 @@ const Courses = () => {
                     />
                   ))}
             </div>
+              <div className="w-full flex mt-14 justify-center items-center">
+                <button className="btn bg-color-c9 hover:bg-color-c2 hover:text-white text-lg capitalize w-1/4">see olther</button>
+              </div>
           </div>
         </section>
         <div className="grid md:grid-cols-2 grid-cols-1 gap-14 w-full md:h-[60vh] h-full">
@@ -377,7 +384,9 @@ const Courses = () => {
             <div
               key={index}
               className={`w-full h-full rounded-3xl px-4 shadow-md flex flex-col overflow-hidden ${
-                items.isImg === true ? "bg-color-c10" : "bg-black/5"
+                items.isImg === true
+                  ? "bg-color-c10"
+                  : "bg-black/5 dark:border-2 dark:border-color-c2"
               }`}
             >
               <div className="w-full h-1/2 px-4 py-6 gap-4 flex flex-col">
