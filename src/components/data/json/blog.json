@@ -12,7 +12,7 @@
                 "par2": " Eget magna fermentum iaculis eu non. Lorem sed risus ultricies tristique nulla aliquet. Elementum nibh tellus molestie nunc non blandit massa enim nec. Dictum fusce ut placerat orci nulla. Tempus urna et pharetra pharetra massa. Tempus imperdiet nulla malesuada pellentesque elit."
             }
         },
-        "Img": "/assets/blog/img1.png",
+        "Img": "/TechfusionAcademy/assets/blog/img1.png",
         "profileName": "namaOrang",
         "date": "20 mar 2024",
         "author": "unkown",
@@ -32,7 +32,7 @@
                 "par2": " Eget magna fermentum iaculis eu non. Lorem sed risus ultricies tristique nulla aliquet. Elementum nibh tellus molestie nunc non blandit massa enim nec. Dictum fusce ut placerat orci nulla. Tempus urna et pharetra pharetra massa. Tempus imperdiet nulla malesuada pellentesque elit."
             }
         },
-        "Img": "/assets/blog/img2.png",
+        "Img": "/techfusionAcademy/assets/blog/img2.png",
         "profileName": "namaOrang",
         "date": "30 jan 2022",
         "author": "unkown",
@@ -43,7 +43,7 @@
         "id": 3,
         "title": "Apple is coming to Indonesia!",
         "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "Img": "/assets/blog/img3.png",
+        "Img": "/TechfusionAcademy/assets/blog/img3.png",
         "topic": {
             "1": {
                 "par1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing elit ut. Eget magna fermentum iaculis eu non. Lorem sed risus ultricies tristique nulla aliquet. Elementum nibh tellus molestie nunc non blandit massa enim nec. Dictum fusce ut placerat orci nulla. Tempus urna et pharetra pharetra massa. Tempus imperdiet nulla malesuada pellentesque elit.",
@@ -65,7 +65,7 @@
         "id": 4,
         "title": "Animal nutrition at Medan Zoo deteriorates",
         "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "Img": "/assets/blog/img4.png",
+        "Img": "/TechfusionAcademy/assets/blog/img4.png",
         "topic": {
             "1": {
                 "par1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing elit ut. Eget magna fermentum iaculis eu non. Lorem sed risus ultricies tristique nulla aliquet. Elementum nibh tellus molestie nunc non blandit massa enim nec. Dictum fusce ut placerat orci nulla. Tempus urna et pharetra pharetra massa. Tempus imperdiet nulla malesuada pellentesque elit.",
@@ -87,7 +87,7 @@
         "id": 5,
         "title": "Changes in the Robot",
         "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "Img": "/assets/blog/img5.png",
+        "Img": "/TechfusionAcademy/assets/blog/img5.png",
         "topic": {
             "1": {
                 "par1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing elit ut. Eget magna fermentum iaculis eu non. Lorem sed risus ultricies tristique nulla aliquet. Elementum nibh tellus molestie nunc non blandit massa enim nec. Dictum fusce ut placerat orci nulla. Tempus urna et pharetra pharetra massa. Tempus imperdiet nulla malesuada pellentesque elit.",
@@ -109,7 +109,7 @@
         "id": 6,
         "title": "Sharing is Care",
         "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "Img": "/assets/blog/img6.png",
+        "Img": "/TechfusionAcademy/assets/blog/img6.png",
         "topic": {
             "1": {
                 "par1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing elit ut. Eget magna fermentum iaculis eu non. Lorem sed risus ultricies tristique nulla aliquet. Elementum nibh tellus molestie nunc non blandit massa enim nec. Dictum fusce ut placerat orci nulla. Tempus urna et pharetra pharetra massa. Tempus imperdiet nulla malesuada pellentesque elit.",
@@ -131,7 +131,7 @@
         "id": 7,
         "title": "Countries with the most people online",
         "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "Img": "/assets/blog/img1.png",
+        "Img": "/TechfusionAcademy/assets/blog/img1.png",
         "topic": {
             "1": {
                 "par1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing elit ut. Eget magna fermentum iaculis eu non. Lorem sed risus ultricies tristique nulla aliquet. Elementum nibh tellus molestie nunc non blandit massa enim nec. Dictum fusce ut placerat orci nulla. Tempus urna et pharetra pharetra massa. Tempus imperdiet nulla malesuada pellentesque elit.",
@@ -153,7 +153,7 @@
         "id": 8,
         "title": "Countries with the most people online",
         "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "Img": "/assets/blog/img2.png",
+        "Img": "/TechfusionAcademy/assets/blog/img2.png",
         "topic": {
             "1": {
                 "par1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing elit ut. Eget magna fermentum iaculis eu non. Lorem sed risus ultricies tristique nulla aliquet. Elementum nibh tellus molestie nunc non blandit massa enim nec. Dictum fusce ut placerat orci nulla. Tempus urna et pharetra pharetra massa. Tempus imperdiet nulla malesuada pellentesque elit.",
@@ -175,7 +175,7 @@
         "id": 9,
         "title": "Countries with the most people online",
         "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "Img": "/assets/blog/img3.png",
+        "Img": "/TechfusionAcademy/assets/blog/img3.png",
         "topic": {
             "1": {
                 "par1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing elit ut. Eget magna fermentum iaculis eu non. Lorem sed risus ultricies tristique nulla aliquet. Elementum nibh tellus molestie nunc non blandit massa enim nec. Dictum fusce ut placerat orci nulla. Tempus urna et pharetra pharetra massa. Tempus imperdiet nulla malesuada pellentesque elit.",
@@ -197,7 +197,7 @@
         "id": 10,
         "title": "Countries with the most people online",
         "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "Img": "/assets/blog/img4.png",
+        "Img": "/TechfusionAcademy/assets/blog/img4.png",
         "topic": {
             "1": {
                 "par1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing elit ut. Eget magna fermentum iaculis eu non. Lorem sed risus ultricies tristique nulla aliquet. Elementum nibh tellus molestie nunc non blandit massa enim nec. Dictum fusce ut placerat orci nulla. Tempus urna et pharetra pharetra massa. Tempus imperdiet nulla malesuada pellentesque elit.",
@@ -219,7 +219,7 @@
         "id": 11,
         "title": "Countries with the most people online",
         "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "Img": "/assets/blog/img5.png",
+        "Img": "/TechfusionAcademy/assets/blog/img5.png",
         "topic": {
             "1": {
                 "par1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing elit ut. Eget magna fermentum iaculis eu non. Lorem sed risus ultricies tristique nulla aliquet. Elementum nibh tellus molestie nunc non blandit massa enim nec. Dictum fusce ut placerat orci nulla. Tempus urna et pharetra pharetra massa. Tempus imperdiet nulla malesuada pellentesque elit.",
@@ -240,7 +240,7 @@
         "id": 12,
         "title": "Countries with the most people online",
         "subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "Img": "/assets/blog/img6.png",
+        "Img": "/TechfusionAcademy/assets/blog/img6.png",
         "topic": {
             "1": {
                 "par1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Dolor sit amet consectetur adipiscing elit ut. Eget magna fermentum iaculis eu non. Lorem sed risus ultricies tristique nulla aliquet. Elementum nibh tellus molestie nunc non blandit massa enim nec. Dictum fusce ut placerat orci nulla. Tempus urna et pharetra pharetra massa. Tempus imperdiet nulla malesuada pellentesque elit.",

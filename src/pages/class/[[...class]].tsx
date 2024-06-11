@@ -25,8 +25,8 @@ const Dynamic = () => {
   const filter = () =>
     materialClass.filter((item) => item.title == query.class?.at(2));
   return (
-    <main className="w-full h-full md:px-8 px-4 py-6 flex flex-col gap-8">
-      <section className="w-full h-full rounded-xl border-2 border-color-c7 p-4">
+    <main className="w-full h-full md:px-8 px-4 py-6 flex flex-col gap-8 dark:bg-color-c7 dark:text-white">
+      <section className="w-full h-full rounded-xl border-2 border-color-c7 dark:border-color-c2 dark:border-2 p-4">
         {filter()
           .map((item) => item.material?.at(id))
           .map((materialItem: any, index: number) => (
@@ -73,7 +73,7 @@ const Dynamic = () => {
                     voluptas error quia accusantium placeat consectetur.
                   </p>
                 </div>
-                <div className="w-full md:h-[40vh] h-full border-t-2 border-black mt-4 md:p-6 py-8 md:py-0 ">
+                <div className="w-full md:h-[40vh] h-full border-t-2 border-black dark:border-color-c2 mt-4 md:p-6 py-8 md:py-0 ">
                   <div className="w-full h-full text-center justify-center items-center flex flex-col gap-14 md:px-36">
                     <div className="flex flex-col gap-4 items-center">
                       <h2 className="md:text-3xl text-lg font-bold ">

@@ -143,7 +143,7 @@ const sortBlogsByLatestViews = () => {
     return views ? views : 0;
   };
   return (
-    <main className={`w-full h-full ${kanit.className}`}>
+    <main className={`w-full h-full ${kanit.className} dark:bg-color-c7`}>
       <header className="w-full h-full bg-color-c8 hidden md:block">
         <div className="w-full h-[60vh] flex flex-row-reverse">
           <div className="w-3/5 bg-bgBlog h-full pl-64 pr-40 py-10">
@@ -170,71 +170,14 @@ const sortBlogsByLatestViews = () => {
           </div>
         </div>
       </header>
-      {/* <section className="w-full h-20"></section> */}
-      {/* <section className="px-14 flex flex-col gap-14 py-14">
-        <h2 className="text-3xl ">favorit blog</h2>
-        {hasil === true ? (
-          <div className="w-full h-30vh">
-            <Link
-              href={"#blog"}
-              className=" w-52 h-52 border-dashed border-2 border-sky-500 p-14 justify-center items-center flex rounded-lg cursor-pointer"
-            >
-              <Circle
-                size={24}
-                className="border-dashed border-2 border-sky-500 flex justify-center items-center"
-              >
-                <FaPlus className="fill-sky-500" size={32} />
-              </Circle>
-            </Link>
-          </div>
-        ) : (
-          <div className="grid grid-cols-3 gap-14">
-            {favorit &&
-              JSON.parse(favorit).map((items: any, index: number) => (
-                <div
-                  className="w-full h-[500px] px-4 py-8 flex flex-col gap-4 rounded-2xl items-center bg-white"
-                  key={index}
-                >
-                  <div className="w-full h-1/2 bg-yellow-500 rounded-lg overflow-hidden">
-                    <Image
-                      src={"/assets/olther/content-bootcamp.png"}
-                      alt={""}
-                      width={500}
-                      height={500}
-                      className="w-full h-full"
-                    />
-                  </div>
-                  <div className="w-full h-1/2 flex flex-col gap-4 justify-between">
-                    <h1 className="text-2xl font-semibold">{items.title}</h1>
-                    <p className="text-md">{items.subtitle}</p>
-                    <div className="flex gap-4 items-center">
-                      <Circle className="bg-green-500" size={12}></Circle>
-                      <div className="flex flex-col">
-                        <h3 className="text-lg">{items.profileName}</h3>
-                        <p className="text-sm">{items.date}</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-          </div>
-        )}
-      </section> */}
-      <section className="w-full h-full md:px-8 px-4 py-14">
+      <section className="w-full h-full md:px-8 px-4 py-14 flex flex-col gap-6">
         <div className="px-4">
           <InputSearch
             SearchHandle={searchHandle}
             placeholder="search your blog...."
           />
           <div className="flex justify-between">
-            {/* <h1>
-              {newChange.length === 0
-                ? `tidak ada hasil pencarian`
-                : `hasil pencarian ${`untuk ${
-                    boolean == false ? DataBlog.length : newChange.length
-                  } blog`}`}
-            </h1> */}
-            <h2>
+            <h2 className="dark:text-white">
               kami menyediakan{" "}
               <span className="text-red-500">{DataBlog.length}</span> blog untuk
               anda
@@ -242,13 +185,13 @@ const sortBlogsByLatestViews = () => {
           </div>
         </div>
         <div
-          className=" w-full h-full grid md:grid-cols-3 grid-cols-1 gap-2"
+          className=" w-full h-full grid md:grid-cols-3 grid-cols-1 gap-6"
           id="blog"
         >
           {boolean === false
             ? DataBlog.map((items, index) => (
                 <div
-                  className="w-full h-[600px] px-4 py-8 flex flex-col gap-4 rounded-2xl items-center bg-white"
+                  className="w-full h-[600px] px-4 py-8 flex flex-col gap-8 rounded-2xl items-center bg-white dark:border-2 dark:border-color-c2 dark:bg-color-c7 dark:text-white"
                   key={index}
                 >
                   <div className="w-full h-1/2 rounded-lg overflow-hidden">
@@ -288,9 +231,13 @@ const sortBlogsByLatestViews = () => {
                         />
                       )}
                     </div>
-                    <Link href={`/Blog/${items.id}`}
-                    onClick={() => { UpdateViews(items); updateLatestView(items); }}
-                      className="text-center cursor-pointer text-color-c10"
+                    <Link
+                      href={`/Blog/${items.id}`}
+                      onClick={() => {
+                        UpdateViews(items);
+                        updateLatestView(items);
+                      }}
+                      className="text-center cursor-pointer text-color-c10 dark:text-color-c2"
                     >
                       see all
                     </Link>
@@ -300,7 +247,7 @@ const sortBlogsByLatestViews = () => {
             : newChange &&
               newChange.map((items: any, index: number) => (
                 <div
-                  className="w-full h-[600px] px-4 py-8 flex flex-col gap-4 rounded-2xl items-center bg-white"
+                  className="w-full h-[600px] px-4 py-8 flex flex-col gap-4 rounded-2xl items-center bg-white dark:border-2 dark:border-color-c2 dark:bg-color-c7 dark:text-white"
                   key={index}
                 >
                   <div className="w-full h-1/2 rounded-lg overflow-hidden">
@@ -340,9 +287,10 @@ const sortBlogsByLatestViews = () => {
                         />
                       )}
                     </div>
-                    <Link href={`/Blog/${items.id}`}
+                    <Link
+                      href={`/Blog/${items.id}`}
                       onClick={() => UpdateViews(items)}
-                      className="text-center cursor-pointer text-color-c10"
+                      className="text-center cursor-pointer text-color-c10 dark:text-color-c2"
                     >
                       see all
                     </Link>
@@ -351,16 +299,16 @@ const sortBlogsByLatestViews = () => {
               ))}
         </div>
       </section>
-      <section className="w-full h-full mt-36">
-        <div className="w-full h-full flex flex-col md:lflex-row">
+      <section className="w-full h-full mt-36 dark:text-white">
+        <div className="w-full h-full flex flex-col md:flex-row">
           <div className="md:w-3/5 w-full md:px-8 px-4 flex flex-col gap-6">
-            <div className=" pb-8 border-b-4 border-black">
+            <div className=" pb-8 border-b-4 border-black dark:border-color-c4">
               <h2 className="text-4xl capitalize ">lastest posts</h2>
             </div>
             <div className="w-full h-full grid md:grid-cols-2 grid-cols-1 gap-6">
               {latestPosts.map((items: any, index: any) => (
                 <div
-                  className="w-full md:h-[500px] h-full flex flex-col gap-4"
+                  className="w-full md:h-[500px] h-full flex flex-col gap-4 dark:border-2 dark:border-color-c2 dark:bg-color-c7 dark:text-white p-4 rounded-lg"
                   key={index}
                 >
                   <div className="w-full h-1/2">
@@ -376,7 +324,7 @@ const sortBlogsByLatestViews = () => {
                     <h2 className="text-lg font-semibold">{items.title}</h2>
                     <p className="text-sm">{items.subtitle}</p>
                     <div className="flex flex-col">
-                      <h3 className="text-md font-bold">{items.author}</h3>
+                      <h3 className="text-md font-bold dark:text-color-c4">{items.author}</h3>
                       <p className="flex items-center gap-2">
                         {items.date}{" "}
                         <Circle
@@ -395,12 +343,15 @@ const sortBlogsByLatestViews = () => {
           </div>
           <div className="md:w-2/5 w-full px-8 flex flex-col gap-14 h-full">
             <div className="w-full h-full flex flex-col gap-2">
-              <div className=" pb-8 border-b-4 border-black">
+              <div className=" pb-8 border-b-4 border-black dark:border-white">
                 <h2 className="text-4xl capitalize ">popular posts</h2>
               </div>
               <div className="w-full h-full grid grid-cols-1 gap-4">
                 {sortBlog.map((items: any, index: any) => (
-                  <div key={index} className="w-full md:h-[200px] h-full flex flex-col md:flex-row md:gap-4">
+                  <div
+                    key={index}
+                    className="w-full md:h-[200px] h-full flex flex-col md:flex-row md:gap-4"
+                  >
                     <div className="md:w-1/3 w-full text-[8rem] flex h-full text-gray-500">
                       0 <span>{index + 1}</span>
                     </div>
@@ -414,7 +365,7 @@ const sortBlogsByLatestViews = () => {
                         />
                         <p className="text-color-text-2">
                           by{" "}
-                          <span className="text-black font-semibold">
+                          <span className="text-black font-semibold dark:text-white">
                             {items.author}
                           </span>{" "}
                           on, {items.date} .{" "}
@@ -429,12 +380,15 @@ const sortBlogsByLatestViews = () => {
               </div>
             </div>
             <div className="">
-              <div className=" pb-8 border-b-4 border-black">
+              <div className=" pb-8 border-b-4 border-black dark:border-white">
                 <h2 className="text-4xl capitalize ">lastest views</h2>
               </div>
               <div className="w-full h-full grid grid-cols-1 gap-4">
                 {latestViews.map((items: any, index: any) => (
-                  <div key={index} className="w-full h-[200px] flex flex-col md:flex-row gap-4">
+                  <div
+                    key={index}
+                    className="w-full h-[200px] flex flex-col md:flex-row gap-4"
+                  >
                     <div className="md:w-1/3 w-full text-[8rem] flex h-full text-gray-500">
                       0 <span>{index + 1}</span>
                     </div>
@@ -448,7 +402,7 @@ const sortBlogsByLatestViews = () => {
                         />
                         <p className="text-color-text-2">
                           by{" "}
-                          <span className="text-black font-semibold">
+                          <span className="text-black font-semibold dark:text-white">
                             {items.author}
                           </span>{" "}
                           on, {items.date} .{" "}

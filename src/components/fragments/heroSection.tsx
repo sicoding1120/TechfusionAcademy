@@ -24,7 +24,7 @@ const Topic = () => (
             {dataRandom.id.Text.data.type.Text[1].map((items, index) => (
               <p
                 key={index}
-                className="font-semibold md:text-7xl text-4xl text-center md:text-start"
+                className="font-semibold md:text-7xl text-4xl text-center md:text-start dark:text-white"
               >
                 {items.text}
               </p>

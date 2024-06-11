@@ -48,7 +48,7 @@ const Dynamic = () => {
     };
   };
   return (
-    <main className=" w-full h-full">
+    <main className=" w-full h-full dark:bg-color-c7 dark:text-white">
       {filterData.map((items, index) => (
         <>
           <section
@@ -82,7 +82,7 @@ const Dynamic = () => {
               <div className="md:w-3/5 w-full h-full md:px-4">
                 <div className="w-full h-full p-4">
                   <Image
-                    src={""}
+                    src={items.img}
                     alt={""}
                     width={300}
                     height={300}
@@ -127,9 +127,9 @@ const Dynamic = () => {
           </section>
           <section className="w-full h-full md:px-8 px-4 py-8">
             <div className="w-full h-full flex flex-col md:flex-row gap-8 justify-center">
-              <div className="md:w-1/2 w-full h-full flex flex-col gap-2 border border-black rounded-3xl">
+              <div className="md:w-1/2 w-full h-full flex flex-col gap-2 border border-black dark:border-color-c2 dark:border-2 rounded-3xl">
                 <div className="w-full h-full rounded-3xl px-6 py-8 flex flex-col gap-2">
-                  <h3 className="text-2xl font-bold text-color-c10">
+                  <h3 className="text-2xl font-bold text-color-c10 dark:text-color-c2">
                     About Class
                   </h3>
                   <div className="flex flex-col gap-4">
@@ -141,7 +141,7 @@ const Dynamic = () => {
                   </div>
                 </div>
                 <div className="w-full h-full rounded-3xl px-6 py-8 flex flex-col gap-6">
-                  <h3 className="text-2xl font-bold text-color-c10">
+                  <h3 className="text-2xl font-bold text-color-c10 dark:text-color-c2">
                     MATERIAL TO BE LEARNED
                   </h3>
                   <div className="flex flex-col gap-4">
@@ -150,8 +150,8 @@ const Dynamic = () => {
                 </div>
               </div>
               <div className="md:w-1/2 w-full md:h-screen h-full flex flex-col gap-6">
-                <div className="border border-black w-full rounded-3xl p-4 flex flex-col gap-6 pb-8">
-                  <h3 className="text-color-c10 text-xl font-bold">
+                <div className="border border-black dark:border-color-c2 dark:border-2 w-full rounded-3xl p-4 flex flex-col gap-6 pb-8">
+                  <h3 className="text-color-c10 dark:text-color-c2 text-xl font-bold">
                     Class Detail
                   </h3>
                   <div className="flex flex-col gap-4">
@@ -189,8 +189,8 @@ const Dynamic = () => {
                     </p>
                   </div>
                 </div>
-                <div className="border border-black w-full rounded-3xl p-4 flex flex-col gap-6 pb-6">
-                  <h3 className="text-color-c10 text-xl font-bold">Mentor</h3>
+                <div className="border border-black dark:border-color-c2 dark:border-2  w-full rounded-3xl p-4 flex flex-col gap-6 pb-6">
+                  <h3 className="text-color-c10 dark:text-color-c2 text-xl font-bold">Mentor</h3>
                   <div className="flex flex-col gap-4">
                     {items.mentor.map((items, index) => (
                       <div className="flex gap-4 items-center" key={index}>

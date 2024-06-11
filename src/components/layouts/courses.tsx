@@ -167,7 +167,7 @@ const Courses = () => {
           </button>
         </div>
       </header>
-      <section className=" w-full md:h-[20vh] h-full md:absolute md:z-[999] md:top-[105vh] md:left-[140px] pt-6 flex justify-center items-center">
+      <section className="w-full md:w-[150vh] md:h-[20vh] h-full md:absolute md:z-[999] md:top-[105vh] md:left-[140px] pt-6 flex justify-center items-center">
         <div className="w-full h-full flex justify-center items-center md:relative">
           <div className="md:flex items-center justify-between md:py-4 gap-4 w-full px-14 md:absolute hidden">
             <div className="w-[130vh] h-[38vh] bg-gray-300 rounded-2xl shadow-2xl">
@@ -204,9 +204,9 @@ const Courses = () => {
         </div>
       </section>
       <section className="w-full h-full px-6 py-6">
-        <div className="w-full h-full  rounded-xl border bg-white">
-          <div className="py-4 px-4 border-b border-color-c10">
-            <h2 className="font-semibold capitalize text-2xl text-color-c10">
+        <div className="w-full h-full  rounded-xl border-2 dark:border-color-c2 bg-white dark:bg-color-c7">
+          <div className="py-4 px-4 border-b border-color-c10 dark:border-color-c2">
+            <h2 className="font-semibold capitalize text-2xl text-color-c10 dark:text-color-c2">
               alur belajar kelas
             </h2>
           </div>
@@ -308,13 +308,13 @@ const Courses = () => {
         </div>
         <section className="w-full h-full px-6 bg-black/5 py-8 rounded-xl">
           <div className="flex flex-col gap-6">
-            <h1 className="text-4xl font-bold  capitalize text-gray-500">
+            <h1 className="text-4xl font-bold  capitalize text-gray-500 dark:text-color-c4">
               class for you
             </h1>
-            <div className="border-2 border-gray-500 rounded-xl flex overflow-hidden bg-white items-center">
+            <div className="border-2 border-gray-500 dark:border-color-c2 rounded-xl flex overflow-hidden bg-white dark:bg-color-c2 items-center">
               <input
                 type="text"
-                className="p-4 w-full outline-none"
+                className="p-4 w-full outline-none dark:bg-color-c7"
                 onChange={searchHandle}
               />
               <div className="w-14 h-full flex justify-center items-center">
@@ -327,7 +327,7 @@ const Courses = () => {
                 />
               </div>
             </div>
-            <h3 className="md:text-xl text-center md:text-start font-semibold text-gray-500">
+            <h3 className="md:text-xl text-center md:text-start font-semibold text-gray-500 dark:text-color-c4">
               kamu memiliki{" "}
               <span className="text-red-500">{dataClass.length}</span> kelas
               untuk anda

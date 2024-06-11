@@ -211,12 +211,12 @@
                     "asideTopic": [{
                       "isDecs": false,
                       "title": "Intro To UI/UX Design",
-                      "img": "",
+                      "img": "/TechfusionAcademy/assets/class/uiux.png",
                       "price": 0
                     }, {
                       "isDecs": false,
-                      "title": "Framer: Creating a Portfolio Website",
-                      "img": "",
+                      "title": "next to UI/UX Design",
+                      "img": "/TechfusionAcademy/assets/class/uiux.png",
                       "price": 0
                     }]
                   }],
@@ -228,7 +228,7 @@
                     "asideTopic": [{
                       "isDecs": true,
                       "title": "Coding at TECHFUSION Playground",
-                      "img": "",
+                      "img": "/TechfusionAcademy/assets/class/html.png",
                       "description": [{
                         "title": "Recommended Before Starting the Course"
                       }],
@@ -236,7 +236,7 @@
                     }, {
                       "isDecs": true,
                       "title": "Beginner Web Development",
-                      "img": "",
+                      "img": "/TechfusionAcademy/assets/class/javascript.png",
                       "description": [{
                         "title": "3 Class Prerequisites"
                       }],

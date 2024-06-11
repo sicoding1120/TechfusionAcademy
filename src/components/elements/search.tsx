@@ -32,7 +32,7 @@ const InputSearch = ({
     <div className="relative w-full h-full">
       <input
         placeholder={placeholder}
-        className="p-2 rounded w-full outline-none border border-gray-500"
+        className="p-2 rounded w-full outline-none border dark:bg-color-c7 dark:text-white border-gray-500"
         ref={searchRef}
         onKeyDown={handleSearch}
         onChange={SearchHandle}

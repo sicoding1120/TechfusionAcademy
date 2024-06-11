@@ -89,7 +89,9 @@ const Authentification = () => {
       if (!localStorage.getItem(`user_@${name}`)) {
         localStorage.setItem(`user_@${name}`, JSON.stringify({ file ,isloggin:true}));
       }
-      sessionStorage.setItem(`user`, JSON.stringify({file, isloggin:true}))
+      const isloggin = true;
+      sessionStorage.setItem(`isLogin`, JSON.stringify(isloggin))
+      sessionStorage.setItem('user', JSON.stringify(name))
       router.push(`/e/account/me/@${name}/dashboard`);
       toast.success("berhasil login");
     }

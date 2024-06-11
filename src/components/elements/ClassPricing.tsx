@@ -41,7 +41,7 @@ const CoursesPricing = () => {
     setIsOpen(false);
   }
   return (
-    <div className="p-4 bg-white rounded-lg">
+    <div className="p-4 bg-white dark:bg-color-c7 rounded-lg">
       <div className="flex justify-between items-center mb-4">
         <h2 className="text-xl font-bold capitalize">{"paket per kelas"}</h2>
         <div className="flex items-center">
@@ -62,7 +62,7 @@ const CoursesPricing = () => {
           <li
             key={index}
             onClick={() => openModal(item)}
-            className="flex items-center justify-between p-4 mb-2 bg-white border-2 border-color-c2 rounded-lg cursor-pointer active:scale-95 transition-all"
+            className="flex items-center justify-between p-4 mb-2 bg-white dark:bg-color-c7 border-2 border-color-c2 rounded-lg cursor-pointer active:scale-95 transition-all"
           >
             <div className="flex items-center">
               <div

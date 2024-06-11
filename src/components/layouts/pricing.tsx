@@ -17,9 +17,25 @@ const Price = () => {
     const [ismultiplication, setIsMultiplication] = useState(false);
     const router = useRouter()
   return (
-    <main>
-      <section className="w-full h-[60vh] px-8 py-8">
-        <div className="w-full h-full bg-blue-600"></div>
+    <main className="dark:bg-color-c7 dark:text-white">
+      <section className="w-full h-full  flex flex-col md:gap-24 gap-8 md:px-14 px-4">
+        <h2 className="text-6xl font-bold capitalize text-center">{"diskon dan promo"}</h2>
+        <section className="grid md:grid-cols-5 grid-cols-2 gap-4 w-full h-full">
+          {diskon.map((item, index) => (
+            <div
+              className="w-full md:h-[306px] cursor-pointer hover:scale-110 transition-all"
+              key={index}
+            >
+              <Image
+                src={`/assets/coupons/diskon${item.price}.png`}
+                alt=""
+                height={200}
+                width={200}
+                className="w-full h-full"
+              />
+            </div>
+          ))}
+        </section>
       </section>
       <section className="flex flex-col justify-center w-full md:gap-24 gap-8 md:py-24 py-14">
         <div className="flex gap-8 w-full h-full justify-center capitalize">
@@ -48,25 +64,6 @@ const Price = () => {
       </section>
       <section className="w-full h-full md:px-14">
         <CoursesPricing />
-      </section>
-      <section className="w-full h-full flex flex-col md:gap-24 gap-8 md:px-14 px-4 mt-14">
-        <h2 className="text-2xl font-bold capitalize">{"diskon dan promo"}</h2>
-        <section className="grid md:grid-cols-5 grid-cols-2 gap-4 w-full h-full">
-          {diskon.map((item, index) => (
-            <div
-              className="w-full md:h-[306px] cursor-pointer hover:scale-110 transition-all"
-              key={index}
-            >
-              <Image
-                src={`/assets/coupons/diskon${item.price}.png`}
-                alt=""
-                height={200}
-                width={200}
-                className="w-full h-full"
-              />
-            </div>
-          ))}
-        </section>
       </section>
     </main>
   );
