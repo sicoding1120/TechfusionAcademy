@@ -149,7 +149,7 @@ const sortBlogsByLatestViews = () => {
           <div className="w-3/5 bg-bgBlog h-full pl-64 pr-40 py-10">
             <div className="w-full">
               <Image
-                src={"/assets/blog.png"}
+                src={"/TechfusionAcademy/assets/blog.png"}
                 alt={""}
                 width={600}
                 height={600}

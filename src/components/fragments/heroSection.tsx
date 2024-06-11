@@ -3,6 +3,7 @@ import React from "react";
 import { Flex, Box } from "@chakra-ui/react";
 import Image from "next/image";
 import dataRandom from "../data/json/dataRandom.json";
+import Link from "next/link"
 
 const HeroSection = () => (
   <section className="bg-bg1  bg-cover bg-center bg-no-repeat md:h-screen h-[110vh] w-full md:px-14 px-4">
@@ -40,9 +41,9 @@ const Topic = () => (
               </p>
             ))}
           </Flex>
-          <button className="btn md:w-[218px] md:h-full h-[40px] capitalize bg-color-c2 text-white hover:bg-color-c1 hover:text-color-c5 border-none shadow-lg">
+          <Link href={"/courses"} className="btn md:w-[218px] md:h-full h-[40px] capitalize bg-color-c2 text-white hover:bg-color-c1 hover:text-color-c5 border-none shadow-lg">
             join for free
-          </button>
+          </Link>
         </Box>
       </Box>
     </Box>

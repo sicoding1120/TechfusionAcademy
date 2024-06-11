@@ -2,8 +2,8 @@
 
 import React, { useEffect, useState } from "react";
 import { Kanit } from "next/font/google";
-import { Circle } from "@chakra-ui/react";
 import Image from "next/image";
+import Link from "next/link";
 import DataBootcamp from "../data/json/cardBootcamp.json";
 import DataCard from "../data/json/cardRandom.json";
 import dataRandom from "../data/json/dataRandom.json";
@@ -162,9 +162,9 @@ const Courses = () => {
             mulai raih karir impian kamu untuk jadi talenta digital handal
             bersama TECHFUSION.
           </p>
-          <button className="btn md:px-36 bg-bgButton border-none text-green-900 px-24 py-4">
+          <Link href={"/auth/login"} className="btn md:px-36 bg-bgButton border-none text-green-900 px-24 py-4">
             Join With Us
-          </button>
+          </Link>
         </div>
       </header>
       <section className="w-full md:w-[150vh] md:h-[20vh] h-full md:absolute md:z-[999] md:top-[105vh] md:left-[140px] pt-6 flex justify-center items-center">
