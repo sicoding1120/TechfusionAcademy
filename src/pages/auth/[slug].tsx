@@ -27,10 +27,11 @@ const Authentification = () => {
   const { query } = useRouter();
   const router = useRouter();
   const [name, setName] = useState("");
-  const [response, setResponse] = useState("");
   const [password, setPassword] = useState("");
   const [count, setCount] = useState("");
   const [register, setIsRegister] = useState(false);
+
+
   const createIdRandom = () => {
     // Tentukan panjang acak antara 3 dan 5
     const idLength = Math.floor(Math.random() * (16 - 3 + 1)) + 3;
@@ -61,7 +62,7 @@ const Authentification = () => {
         toast.success("akun anda terbuat");
         localStorage.setItem(
           `user_@${name}`,
-          JSON.stringify([{ name, password, register }])
+          JSON.stringify([{ name, password, register, count}])
         );
         setName("");
         setPassword("");
