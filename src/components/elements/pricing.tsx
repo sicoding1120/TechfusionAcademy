@@ -36,7 +36,7 @@ const Pricing = ({
             {price == 0 ? "for user, limited" : `for user, for ${time}`}
           </span>
           <Link href="#">
-            <div className="relative group inline-block w-full py-4 px-6 text-center hover:text-gray-50 bg-color-c2 font-semibold rounded-full overflow-hidden transition duration-200">
+            <div className="relative group inline-block w-full py-4 px-6 text-center hover:text-gray-50 bg-bg-button font-semibold rounded-full overflow-hidden transition duration-200">
               <div className="absolute top-0 right-full w-full h-full bg-gray-900 dark:bg-color-text-1 transform group-hover:translate-x-full group-hover:scale-102 transition duration-500"></div>
               <span className="relative">
                 {price == 0 ? "Start 7-days Trial" : `buy and start 1 ${time}`}

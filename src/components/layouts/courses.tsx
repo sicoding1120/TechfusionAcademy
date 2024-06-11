@@ -172,7 +172,7 @@ const Courses = () => {
           <div className="md:flex items-center justify-between md:py-4 gap-4 w-full px-14 md:absolute hidden">
             <div className="w-[130vh] h-[38vh] bg-gray-300 rounded-2xl shadow-2xl">
               <Image
-                src={"/assets/iklan-content/iklan-1.png"}
+                src={"/TechfusionAcademy/assets/iklan-content/iklan-1.png"}
                 alt={""}
                 width={400}
                 height={400}
@@ -495,7 +495,9 @@ const Courses = () => {
                         />
                         <div className="w-full md:h-3/5 h-full flex flex-col justify-between py-4 px-4">
                           <div className="flex flex-col md:gap-3 gap-8">
-                            <h4 className="md:text-2xl text-lg">{items.title}</h4>
+                            <h4 className="md:text-2xl text-lg">
+                              {items.title}
+                            </h4>
                             {items.isDecs === true ? (
                               <div className="w-full h-full text-blue-600">
                                 {items.description.map(

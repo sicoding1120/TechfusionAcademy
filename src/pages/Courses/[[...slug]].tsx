@@ -194,13 +194,6 @@ const Dynamic = () => {
                   <div className="flex flex-col gap-4">
                     {items.mentor.map((items, index) => (
                       <div className="flex gap-4 items-center" key={index}>
-                        <Image
-                          src={""}
-                          alt={""}
-                          width={100}
-                          height={100}
-                          className="rounded-full w-[40px] h-[40px]"
-                        />
                         <p className="text-xl font-semibold capitalize">
                           {items.name}
                         </p>

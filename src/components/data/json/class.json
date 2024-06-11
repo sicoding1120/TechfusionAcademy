@@ -42,12 +42,12 @@
     }
 }, {
     "id": 2,
-    "title": "Style With Css Basic",
+    "title": "intro to UI/UX",
     "keyOfSearch": "css",
     "headerTitle": "Css",
     "price": 1200000,
     "isDiscount": false,
-    "img": "",
+    "img": "/TechfusionAcademy/assets/class/uiux.png",
     "discount": 20,
     "aboutClass": [{
             "text": "Nowadays, most aspects of our lives require apps. From buying goods, ordering food, to making transactions."
@@ -89,7 +89,7 @@
     "headerTitle": "Js",
     "price": 250000,
     "isDiscount": false,
-    "img": "",
+    "img": "/TechfusionAcademy/assets/class/javascript.png",
     "discount": 20,
     "aboutClass": [{
             "text": "Nowadays, most aspects of our lives require apps. From buying goods, ordering food, to making transactions."

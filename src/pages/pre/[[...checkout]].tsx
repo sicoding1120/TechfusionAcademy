@@ -195,7 +195,12 @@ const LeftTopic = () => {
                                 alt={""}
                                 width={200}
                                 height={200}
-                                className={`w-full h-full ${items.title == "Amazon" || items.title == "GooglePay" ? ",md:scale-110":"md:scale-[2] scale-125"}`}
+                                className={`w-full h-full ${
+                                  items.title == "Amazon" ||
+                                  items.title == "GooglePay"
+                                    ? ",md:scale-110"
+                                    : "md:scale-[2] scale-125"
+                                }`}
                               />
                             </div>
                             <span className="w-2/3 h-full md:text-md text-sm capitalize font-bold">
@@ -244,7 +249,6 @@ const LeftTopic = () => {
                 </div>
               </div>
             </div>
-            {/* <CardMetodePembayaran /> */}
             <div className="flex justify-between items-center mt-8">
               <button className="bg-green-500 text-white px-6 py-2 rounded-lg">
                 Next Step
@@ -257,6 +261,109 @@ const LeftTopic = () => {
           <h2 className="text-2xl font-bold mb-6 capitalize">
             {query.checkout?.at(2)}
           </h2>
+          <div className="flex flex-col gap-4">
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="w-full h-full flex flex-col gap-2">
+                <h3 className=" capitalize">nama class </h3>
+                <div className="py-2 px-4 border rounded-md">
+                  {query.checkout?.at(3)}
+                </div>
+              </div>
+              <div className="w-full h-full flex flex-col gap-2">
+                <h3 className=" capitalize">type class </h3>
+                <select
+                  title="select"
+                  className="w-full p-2 border rounded capitalize"
+                >
+                  <option value="basic">basic</option>
+                  <option value="intermediate">intermediate</option>
+                  <option value="hard">hard</option>
+                  <option value="pro">pro</option>
+                  {/* Add more options as needed */}
+                </select>
+              </div>
+            </div>
+            <div className="w-full h-full">
+              <h1 className="font-semibold mb-6">Metode Pembayaran</h1>
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="flex gap-4 flex-col justify-start items-start">
+                  <h4 className="text-lg font-semibold capitalize">
+                    selain bank
+                  </h4>
+                  <div className="w-full grid grid-cols-2 gap-4">
+                    {paymentWithCompany.map((items, index) => (
+                      <div
+                        className={`w-full h-[70px] border-2 group hover:border-color-c2 group-focus:border-color-c2  transition-all rounded-lg `}
+                        key={index}
+                      >
+                        <div className="w-full h-full flex justify-center items-center">
+                          <label
+                            htmlFor="credit-card"
+                            className="h-full flex gap-2 items-center justify-center text-lg w-full"
+                          >
+                            <div className="flex justify-center items-center md:gap-6 gap-3">
+                              <div className="w-2/3 h-4 flex justify-center items-center">
+                                <Image
+                                  src={`/assets/paymentIcons/${items.title}.png`}
+                                  alt={""}
+                                  width={200}
+                                  height={200}
+                                  className="w-full h-full md:scale-110"
+                                />
+                              </div>
+                              <span className="w-2/3 h-full md:text-md text-sm capitalize font-bold">
+                                {items.title}
+                              </span>
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <div className="flex gap-4 flex-col justify-start items-start">
+                  <h4 className="text-lg font-semibold capitalize">
+                    dengan bank
+                  </h4>
+                  <div className="w-full grid grid-cols-2 gap-4">
+                    {paymentWithBank.map((items, index) => (
+                      <div
+                        className="w-full h-[70px] hover:border-color-c2 border-2 border-slate-300 rounded-lg"
+                        key={index}
+                      >
+                        <div className="w-full h-full flex justify-center items-center">
+                          <label
+                            htmlFor="credit-card"
+                            className="h-full flex gap-2 items-center justify-center text-lg w-full"
+                          >
+                            <div className="flex justify-center items-center gap-3 md:gap-6">
+                              <div className="w-full h-4 flex justify-center items-center">
+                                <Image
+                                  src={`/assets/paymentIcons/${items.title}.png`}
+                                  alt={""}
+                                  width={200}
+                                  height={200}
+                                  className="w-full h-full md:scale-[2]"
+                                />
+                              </div>
+                              <span className="w-2/3 h-full md:text-md text-sm capitalize font-bold">
+                                {items.title}
+                              </span>
+                            </div>
+                          </label>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+              <div className="flex justify-between items-center mt-8">
+                <button className="bg-green-500 text-white px-6 py-2 rounded-lg">
+                  Next Step
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       ) : (
         <div className="md:w-2/3 w-full bg-white p-8 rounded-lg flex flex-col">
@@ -359,7 +466,11 @@ const LeftTopic = () => {
                   </div>
                 </div>
               </div>
-              {/* <CardMetodePembayaran /> */}
+              <div className="flex justify-between items-center mt-8">
+                <button className="bg-green-500 text-white px-6 py-2 rounded-lg">
+                  Next Step
+                </button>
+              </div>
             </div>
           </div>
         </div>
