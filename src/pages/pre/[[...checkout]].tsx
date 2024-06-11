@@ -191,7 +191,7 @@ const LeftTopic = () => {
                           <div className="flex justify-center items-center md:gap-6 gap-3">
                             <div className="w-2/3 h-4 flex justify-center items-center">
                               <Image
-                                src={`/assets/paymentIcons/${items.title}.png`}
+                                src={`/TechfusionAcademy/assets/paymentIcons/${items.title}.png`}
                                 alt={""}
                                 width={200}
                                 height={200}
@@ -231,7 +231,7 @@ const LeftTopic = () => {
                           <div className="flex justify-center items-center md:gap-6 gap-3">
                             <div className="w-full h-4 flex justify-center items-center">
                               <Image
-                                src={`/assets/paymentIcons/${items.title}.png`}
+                                src={`/TechfusionAcademy/assets/paymentIcons/${items.title}.png`}
                                 alt={""}
                                 width={200}
                                 height={200}
@@ -304,7 +304,7 @@ const LeftTopic = () => {
                             <div className="flex justify-center items-center md:gap-6 gap-3">
                               <div className="w-2/3 h-4 flex justify-center items-center">
                                 <Image
-                                  src={`/assets/paymentIcons/${items.title}.png`}
+                                  src={`/TechfusionAcademy/assets/paymentIcons/${items.title}.png`}
                                   alt={""}
                                   width={200}
                                   height={200}
@@ -339,7 +339,7 @@ const LeftTopic = () => {
                             <div className="flex justify-center items-center gap-3 md:gap-6">
                               <div className="w-full h-4 flex justify-center items-center">
                                 <Image
-                                  src={`/assets/paymentIcons/${items.title}.png`}
+                                  src={`/TechfusionAcademy/assets/paymentIcons/${items.title}.png`}
                                   alt={""}
                                   width={200}
                                   height={200}
@@ -413,7 +413,7 @@ const LeftTopic = () => {
                             <div className="flex justify-center items-center md:gap-6 gap-3">
                               <div className="w-2/3 h-4 flex justify-center items-center">
                                 <Image
-                                  src={`/assets/paymentIcons/${items.title}.png`}
+                                  src={`/TechfusionAcademy/assets/paymentIcons/${items.title}.png`}
                                   alt={""}
                                   width={200}
                                   height={200}
@@ -448,7 +448,7 @@ const LeftTopic = () => {
                             <div className="flex justify-center items-center gap-3 md:gap-6">
                               <div className="w-full h-4 flex justify-center items-center">
                                 <Image
-                                  src={`/assets/paymentIcons/${items.title}.png`}
+                                  src={`/TechfusionAcademy/assets/paymentIcons/${items.title}.png`}
                                   alt={""}
                                   width={200}
                                   height={200}
