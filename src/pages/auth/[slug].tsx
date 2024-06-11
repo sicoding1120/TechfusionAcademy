@@ -109,7 +109,7 @@ const Authentification = () => {
                 className="w-12 h-12 bg-white rounded-md cursor-pointer"
               >
                 <Image
-                  src={"/TechfusionAcademy/assets/logoWeb.png"}
+                  src={"/TechfusionAcademy/assets/logo/logoWeb.png"}
                   alt={""}
                   width={100}
                   height={100}
@@ -160,21 +160,6 @@ const Authentification = () => {
             >
               {query.slug === "register" ? (
                 <div className="flex flex-col gap-4">
-                  {/* {dataRandom.id.input.type[1].data.map((items, index) => (
-                    <Input
-                      placeholder={`enter your ${items.name}`}
-                      key={index}
-                      iconFirst={true}
-                      imageUrl={items.iconUrl}
-                      type={items.type}
-                      iconLast={false}
-                      image={undefined}
-                      classNameInput={classNameInput}
-                      password={password}
-                      passwordValid={passwordValid}
-                      valueInput={valueInput}
-                    />
-                  ))} */}
                   <InputNormal
                     type={"text"}
                     onchange={(e: any) => setName(e.target.value)}
