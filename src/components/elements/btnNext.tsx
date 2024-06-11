@@ -2,7 +2,7 @@ import React from 'react'
 import { FaArrowLeftLong, FaArrowRightLong } from "react-icons/fa6";
 
 
-const BtnNext = ({ reverse, onclick }: { reverse: boolean; onclick:any}) => {
+const BtnNext = ({ reverse, onclick }: { reverse: boolean; onclick?:any}) => {
   return (
       <button className={`button flex ${reverse === true ? "flex-row-reverse" : "flex-row"} border-[3px] border-transparent`} onClick={onclick}>
           <span className="text md:text-xl font-semibold capitalize">

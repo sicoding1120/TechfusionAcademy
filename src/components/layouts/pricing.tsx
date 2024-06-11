@@ -46,15 +46,15 @@ const Price = () => {
           ))}
         </div>
       </section>
-      <section className="w-full h-full px-14">
+      <section className="w-full h-full md:px-14">
         <CoursesPricing />
       </section>
-      <section className="w-full h-full flex flex-col gap-24 px-14 mt-14">
+      <section className="w-full h-full flex flex-col md:gap-24 gap-8 md:px-14 px-4 mt-14">
         <h2 className="text-2xl font-bold capitalize">{"diskon dan promo"}</h2>
-        <section className="grid grid-cols-5 gap-4 w-full h-full">
+        <section className="grid md:grid-cols-5 grid-cols-2 gap-4 w-full h-full">
           {diskon.map((item, index) => (
             <div
-              className="w-full h-[306px] cursor-pointer hover:scale-110 transition-all"
+              className="w-full md:h-[306px] cursor-pointer hover:scale-110 transition-all"
               key={index}
             >
               <Image

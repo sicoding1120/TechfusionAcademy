@@ -201,7 +201,7 @@ const AsideTopic = () => {
             </p>
           </div>
           <button
-            onClick={() => router.push("/pre/e/premium/checkout")}
+            onClick={() => router.push("/Pricing")}
             className=" relative w-[150px] py-1 px-2 flex justify-center items-center capitalize rounded-full border-2 hover:bg-color-c2 transition-all border-color-c2 text-white"
           >
             get access

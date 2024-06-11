@@ -43,9 +43,7 @@ const Dynamic = () => {
     toast(<CustomToast />);
     const handleConfirm = () => {
       router.push(
-        `/pre/courses/class/get/${filterData.map(
-          (item: any) => item.title
-        )}/checkout `
+        `/Pricing`
       );
     };
   };

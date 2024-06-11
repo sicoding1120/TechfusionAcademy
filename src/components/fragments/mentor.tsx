@@ -18,10 +18,8 @@ const Mentor = () => {
   return (
     <section className="w-full h-full px-14 my-8">
       <Box className="flex flex-col w-full h-full gap-24">
-        <Flex
-          className="w-full"
-          justifyContent={"space-between"}
-          align={"center"}
+        <Box
+          className="w-full flex flex-col gap-4 md:flex-row items-center md:justify-between"
         >
           <Text className="md:text-6xl text-3xl dark:text-color-c4">Search your mentor.</Text>
           <Box className="flex gap-4">
@@ -38,8 +36,8 @@ const Mentor = () => {
               <IoIosArrowForward size={30} />
             </Circle>
           </Box>
-        </Flex>
-        <Flex p={2} gap={16} className="flex flex-col md:flex-row">
+        </Box>
+        <Flex p={2} gap={16} className="flex flex-col md:flex-row justify-center">
           {DataMentor.id[id as unknown as keyof typeof DataMentor.id].map(
             (
               mentor: { name: string; image: string; title: string },

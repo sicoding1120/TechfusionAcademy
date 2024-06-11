@@ -49,19 +49,19 @@ const icons = [
 const operator = [
   {
     title: "Pilih kelas yang sesuai keinginanmu",
-    img: "",
+    img: "/TechfusionAcademy/assets/alurBljr/step1.png",
   },
   {
     title: "Selesaikan materi kelas yang dipilih dan kerjakan latihannya",
-    img: "",
+    img: "/TechfusionAcademy/assets/alurBljr/step2.png",
   },
   {
     title: "Jika sudah mahir kamu bisa langsung mengikuti tantangan",
-    img: "",
+    img: "/TechfusionAcademy/assets/alurBljr/step3.png",
   },
   {
     title: "Raih SkilPoin atau SkilBadge ketika kamu sudah menyelesaikan kelas",
-    img: "",
+    img: "/TechfusionAcademy/assets/alurBljr/step4.png",
   },
 ];
 const SaveClass = (items: any) => {
@@ -167,10 +167,9 @@ const Courses = () => {
           </button>
         </div>
       </header>
-      <section className=" w-full md:h-[20vh] h-full md:absolute md:z-[999] md:top-[105vh] pt-6 flex justify-center items-center">
+      <section className=" w-full md:h-[20vh] h-full md:absolute md:z-[999] md:top-[105vh] md:left-[140px] pt-6 flex justify-center items-center">
         <div className="w-full h-full flex justify-center items-center md:relative">
           <div className="md:flex items-center justify-between md:py-4 gap-4 w-full px-14 md:absolute hidden">
-            <Circle size={16} className="bg-blue-500"></Circle>
             <div className="w-[130vh] h-[38vh] bg-gray-300 rounded-2xl shadow-2xl">
               <Image
                 src={"/assets/iklan-content/iklan-1.png"}
@@ -180,16 +179,11 @@ const Courses = () => {
                 className="w-full h-full"
               />
             </div>
-            <Circle size={16} className="bg-blue-500"></Circle>
           </div>
           <div className="w-full h-[30vh] flex flex-col gap-2 md:hidden px-4">
-            <div className="flex gap-2">
-              <Circle size={10} className="bg-blue-500"></Circle>
-              <Circle size={10} className="bg-blue-500"></Circle>
-            </div>
             <div className="w-full h-[15vh] bg-gray-300 rounded-2xl overflow-hidden">
               <Image
-                src={"/assets/iklan-content/iklan-1.png"}
+                src={"/TechfusionAcademy/assets/iklan-content/iklan-1.png"}
                 alt={""}
                 width={400}
                 height={400}
@@ -426,21 +420,21 @@ const Courses = () => {
                       alt={""}
                       width={260}
                       height={400}
-                      className="relative z-[1] md:left-14 left-2 hover:md:scale-110 hover:scale-150 scale-125 md:scale-100 transition-all hover:z-[4]"
+                      className="relative z-[1] md:left-14 left-2  hover:md:scale-110 hover:scale-150 scale-90 md:scale-100 transition-all hover:z-[4]"
                     />
                     <Image
                       src={"/TechfusionAcademy/assets/olther/img2.png"}
                       alt={""}
                       width={290}
                       height={400}
-                      className="relative z-[2] hover:md:scale-110 hover:scale-150 scale-125 md:scale-100 transition-all hover:z-[4]"
+                      className="relative z-[2] hover:md:scale-110 hover:scale-150 scale-90 md:scale-100 transition-all hover:z-[4]"
                     />
                     <Image
                       src={"/TechfusionAcademy/assets/olther/img3.png"}
                       alt={""}
                       width={320}
                       height={400}
-                      className="relative z-[3] md:right-10 right-2 hover:md:scale-110 hover:scale-150 scale-125 md:scale-100 transition-all hover:z-[4]"
+                      className="relative z-[3] md:right-10 right-2 hover:md:scale-110 hover:scale-150 scale-90 md:scale-100 transition-all hover:z-[4]"
                     />
                   </>
                 ) : (

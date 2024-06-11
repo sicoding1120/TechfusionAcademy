@@ -61,7 +61,7 @@ const Navbar = () => {
           alt={""}
           width={100}
           height={100}
-          className="w-14 h-14 md:w-28 md:h-28 bg-red-500"
+          className="w-14 h-14 md:w-28 md:h-28"
         />
         <Text
           className="md:text-2xl text-sm font-bold uppercase"

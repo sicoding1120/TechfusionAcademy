@@ -5,7 +5,7 @@
     "headerTitle": "Html",
     "price": 0,
     "isDiscount": false,
-    "img": "",
+    "img": "/TechfusionAcademy/assets/class/html.png",
     "discount": 20,
     "aboutClass": [{
             "text": "Nowadays, most aspects of our lives require apps. From buying goods, ordering food, to making transactions."

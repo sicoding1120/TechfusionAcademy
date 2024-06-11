@@ -28,7 +28,8 @@ const config: Config = {
           "url('/TechfusionAcademy/assets/background/bg-content-corses.png')",
         bgCourses: "url('/TechfusionAcademy/assets/background/bg-courses.png')",
         bgText: "url('/TechfusionAcademy/assets/background/bg-text.png')",
-        bgCard: "url('/assets/background/bg-cardDashboard.png')",
+        bgCard:
+          "url('/TechfusionAcademy/assets/background/bg-cardDashboard.png')",
       },
       colors: {
         color: {
