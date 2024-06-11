@@ -87,7 +87,8 @@ const Navbar = () => {
         const handleConfirm = () => {
           const login = false;
           sessionStorage.setItem("isLogin", JSON.stringify(login))
-          window.location.reload()
+          window.location.reload();
+          toast.success("anda telah log out")
         }
         toast(<CustomToast />, {
           position: "top-left",
