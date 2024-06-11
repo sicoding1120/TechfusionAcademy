@@ -83,7 +83,7 @@ const Testimonial = () => {
                 <Box className="flex w-full gap-4 items-center">
                   <Image
                     src={testimonial.avatar}
-                    alt={testimonial.name}
+                    alt={""}
                     width={80}
                     height={60}
                     className="rounded-full bg-red-500 w-16 h-16"

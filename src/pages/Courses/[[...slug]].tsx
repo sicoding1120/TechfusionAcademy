@@ -100,7 +100,7 @@ const Dynamic = () => {
                 <div className="md:w-3/5 w-full h-full flex flex-col md:flex-row justify-center items-center gap-3 py-4">
                   <div className="md:w-16 w-24 h-full">
                     <Image
-                      src={"/assets/icons/skilbadge-icon1.png"}
+                      src={"/TechfusionAcademy/assets/icons/skilbadge-icon1.png"}
                       alt={""}
                       width={200}
                       height={200}

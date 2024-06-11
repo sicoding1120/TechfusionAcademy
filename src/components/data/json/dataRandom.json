@@ -47,9 +47,9 @@
                 "link": "/auth/register"
               },
               {
-                "title": " Log in ",
+                "title": " join for free",
                 "className": "btn bg-color-c2 text-white capitalize border-none px-6 text-md hover:bg-color-c1 hover:text-black",
-                "link": "/auth/login"
+                "link": "/courses"
               }
             ]
           },
