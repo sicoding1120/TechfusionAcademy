@@ -6,7 +6,7 @@ import dataRandom from "../data/json/dataRandom.json";
 import Link from "next/link"
 
 const HeroSection = () => (
-  <section className="bg-bg1  bg-cover bg-center bg-no-repeat md:h-screen h-[110vh] w-full md:px-14 px-4">
+  <section className="md:bg-bg1 bg-cover bg-center bg-no-repeat md:h-screen h-[110vh] w-full md:px-14 px-4">
     <Topic />
   </section>
 );
@@ -25,7 +25,7 @@ const Topic = () => (
             {dataRandom.id.Text.data.type.Text[1].map((items, index) => (
               <p
                 key={index}
-                className="font-semibold md:text-7xl text-4xl text-center md:text-start dark:text-white"
+                className="font-semibold md:text-7xl text-4xl text-center md:text-start"
               >
                 {items.text}
               </p>
