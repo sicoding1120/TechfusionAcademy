@@ -197,13 +197,6 @@
               "data": {
                 "id": {
                   "1": [{
-                    "headTitle": "Chalengges",
-                    "title": "Take on a variety  of challenging challenges!",
-                    "subTitle": "Challenge yourself with a challenge to solve the problem at hand.",
-                    "istopic": false,
-                    "asideTopic": []
-                  }],
-                  "2": [{
                     "headTitle": "Class",
                     "title": "Industry Based TECHFUSION Class",
                     "subTitle": "TECHFUSION provides a wide range of industry based classes to enhance your digital skills.",
@@ -220,6 +213,14 @@
                       "price": 0
                     }]
                   }],
+                  "2": [{
+                    "headTitle": "Chalengges",
+                    "title": "Take on a variety  of challenging challenges!",
+                    "subTitle": "Challenge yourself with a challenge to solve the problem at hand.",
+                    "istopic": false,
+                    "asideTopic": []
+                  }],
+
                   "3": [{
                     "headTitle": "TECHPath",
                     "title": "Test Your Skills Here!",

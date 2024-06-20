@@ -19,8 +19,10 @@ const Dynamic = () => {
   }, []);
 
   const { query } = useRouter();
+  console.log(query.slug );
   const handle = () => {
     const filter = BlogData.filter((items: any) => items.id == query.slug);
+    console.log(filter);
     const viewsUp = sessionStorage.getItem(`views_${query.slug}`) || 0;
     setFilter(filter);
     setViewUp(viewsUp);

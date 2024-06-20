@@ -1,6 +1,6 @@
 [
     {
-        "title": "trial",
+        "title": "standard",
         "price": 0,
         "fitur": [{
             "title": "limited class"
@@ -13,8 +13,8 @@
         }]
     },
     {
-        "title": "vip",
-        "price": 800.000,
+        "title": "Exclusive",
+        "price": 80,
         "fitur": [{
             "title": "unlimited class"
         }, {
@@ -32,8 +32,8 @@
         }]
     },
     {
-        "title": "pro",
-        "price": 300.000,
+        "title": "Premium",
+        "price": 30,
         "fitur": [{
             "title": "unlimited class"
         }, {

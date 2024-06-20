@@ -41,7 +41,7 @@ const Topic = () => (
               </p>
             ))}
           </Flex>
-          <Link href={"/courses"} className="btn md:w-[218px] md:h-full h-[40px] capitalize bg-color-c2 text-white hover:bg-color-c1 hover:text-color-c5 border-none shadow-lg">
+          <Link href={"/Class"} className="btn md:w-[218px] md:h-full h-[40px] capitalize bg-color-c2 text-white hover:bg-color-c1 hover:text-color-c5 border-none shadow-lg">
             join for free
           </Link>
         </Box>

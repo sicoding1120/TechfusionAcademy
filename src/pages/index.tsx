@@ -2,6 +2,8 @@ import React from "react";
 import Home from "@/components/template/Home";
 import { Kanit } from "next/font/google";
 import { useRouter } from "next/router";
+import CardClassNew from "@/components/elements/cardClassNew";
+import ClassNew from "@/components/layouts/classNew";
 
 const kanit = Kanit({
   subsets: ["latin"],
@@ -12,7 +14,7 @@ const Index = () => {
   const { pathname } = useRouter();
   console.log(pathname);return (
     <main className={`${kanit.className} dark:bg-color-c7 bg-color-c4`}>
-        <Home/>
+      <Home />
     </main>
   );
 };

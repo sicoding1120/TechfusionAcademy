@@ -12,13 +12,14 @@ const kanit = Kanit({
 });
 
 const Dynamic = () => {
-  const { query } = useRouter();
+  const { query } = useRouter();  
+  console.log(query.slug)
   const router = useRouter();
   const filterData = Class.filter(
-    (items) => items.headerTitle == query.slug?.at(1)
+    (items) => items.title == query.slug?.at(1)
   );
 
-  const handleClass = () => {
+  const handleClass = (items:any) => {
     const CustomToast = ({ closeToast }: any) => {
       return (
         <div className="flex flex-col gap-4">
@@ -27,7 +28,7 @@ const Dynamic = () => {
             <button
               className="w-1/2 btn"
               onClick={() => {
-                handleConfirm();
+                handleConfirm(items);
                 closeToast();
               }}
             >
@@ -41,9 +42,10 @@ const Dynamic = () => {
       );
     };
     toast(<CustomToast />);
-    const handleConfirm = () => {
+    const handleConfirm = (items: any) => {
+      console.log(items);
       router.push(
-        `/Pricing`
+        `/pre/buy/class/${items.title}/checkout`
       );
     };
   };
@@ -67,7 +69,7 @@ const Dynamic = () => {
                   <button
                     onClick={
                       items.price !== 0
-                        ? handleClass
+                        ? () => handleClass(items)
                         : () =>
                             router.push(
                               `/class/material/detail/${items.title}/lesson`

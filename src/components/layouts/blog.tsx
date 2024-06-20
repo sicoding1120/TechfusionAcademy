@@ -8,6 +8,8 @@ import { FaPlus, FaRegBookmark, FaBookmark } from "react-icons/fa6";
 import Link from "next/link";
 import InputSearch from "../elements/search";
 import { useRouter } from "next/router";
+import { FaSearch } from "react-icons/fa";
+import BlogCard from "../elements/blogCard";
 
 const kanit = Kanit({
   subsets: ["latin"],
@@ -49,6 +51,7 @@ const Blog = () => {
   const [sortBlog, setSortBlog] = useState([]);
   const [latestPosts, setLatestPosts] = useState([]);
   const [latestViews, setLatestViews] = useState([]);
+  const [keyword, setKeyword] = useState("");
   const [favorit, setFavorit] = useState(sessionStorage.getItem("favorit"));
   const [hasil, setHasil] = useState(false);
   const [boolean, setBoolean] = useState(false);
@@ -75,9 +78,10 @@ const Blog = () => {
   };
 
   const updateLatestView = (items: any) => {
-    const viewedBlogs = JSON.parse(sessionStorage.getItem("viewedBlogs") as never) || [];
+    const viewedBlogs =
+      JSON.parse(sessionStorage.getItem("viewedBlogs") as never) || [];
     const existingBlogIndex = viewedBlogs.findIndex(
-      (blog: any ) => blog.id === items.id
+      (blog: any) => blog.id === items.id
     );
 
     if (existingBlogIndex !== -1) {
@@ -90,7 +94,6 @@ const Blog = () => {
     sortBlogsByLatestViews();
   };
 
-
   const sortBlogsByDate = () => {
     const sortedBlogs = [...DataBlog].sort((a, b) => {
       return new Date(b.date).getTime() - new Date(a.date).getTime();
@@ -100,13 +103,16 @@ const Blog = () => {
     setLatestPosts(latestBlogs as never);
   };
 
-const sortBlogsByLatestViews = () => {
-  const viewedBlogs = JSON.parse(sessionStorage.getItem("viewedBlogs") as never) || [];
-  const sortedBlogs = viewedBlogs.sort((a: any, b:any ) => b.lastViewed - a.lastViewed);
-  const latestViewedBlogs = sortedBlogs.slice(0, 5); // Ambil 5 postingan terakhir dilihat
-  setLatestViews(latestViewedBlogs as never[]);
+  const sortBlogsByLatestViews = () => {
+    const viewedBlogs =
+      JSON.parse(sessionStorage.getItem("viewedBlogs") as never) || [];
+    const sortedBlogs = viewedBlogs.sort(
+      (a: any, b: any) => b.lastViewed - a.lastViewed
+    );
+    const latestViewedBlogs = sortedBlogs.slice(0, 5); // Ambil 5 postingan terakhir dilihat
+    setLatestViews(latestViewedBlogs as never[]);
   };
-  
+
   const getViews = (blog: any) => {
     const views = sessionStorage.getItem(`views_${blog.id}`);
     return views ? parseInt(views) : 0;
@@ -123,19 +129,7 @@ const sortBlogsByLatestViews = () => {
 
   const searchHandle = (event: React.ChangeEvent<HTMLInputElement>) => {
     const keyword = event.target.value;
-    if (keyword === "" || event.type === "click") {
-      setBoolean(!boolean);
-    } else {
-      const change = DataBlog.filter((item) =>
-        item.title.toLowerCase().includes(keyword.toLowerCase())
-      );
-      if (change.length === 0) {
-        setBoolean(false);
-      } else {
-        setNewChange(change as never[]);
-      }
-      setBoolean(!boolean);
-    }
+    setKeyword(keyword);
   };
 
   const JmlViews = (id: string) => {
@@ -144,33 +138,37 @@ const sortBlogsByLatestViews = () => {
   };
   return (
     <main className={`w-full h-full ${kanit.className} dark:bg-color-c7`}>
-      <header className="w-full h-full bg-color-c8 hidden md:block">
-        <div className="w-full h-[60vh] flex flex-row-reverse overflow-hidden">
-          <div className="w-3/5 bg-bgBlog h-full pl-64 pr-40 py-10">
-            <div className="w-full">
-              <Image
-                src={"/TechfusionAcademy/assets/olther/blog.png"}
-                alt={""}
-                width={600}
-                height={600}
-                className="w-full h-full"
+      <header className="w-full h-[80vh] bg-fixed bg-no-repeat bg-cover bg-bgBlogHead hidden md:flex md:flex-col gap-6 justify-center items-center">
+        <h2 className="text-white text-[4.3rem]">TECH Blog site</h2>
+        <p className="text-2xl text-white w-[700px] text-center mb-4">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        </p>
+        <div className="w-[700px] bg-white h-[50px] rounded-lg overflow-hidden flex">
+          <input
+            type="text"
+            className="w-11/12 h-full px-4 outline-none"
+            onChange={searchHandle}
+          />
+          <div className="w-1/12 h-full p-1">
+            <button
+              className="w-full h-full bg-color-c9 rounded-md active:scale-90 transition-all flex justify-center items-center"
+              title="search"
+            >
+              <FaSearch
+                size={22}
+                className="text-white"
+                onClick={() =>
+                  router.push(
+                    `/search/blog/${keyword}`
+                  )
+                }
               />
-            </div>
-          </div>
-          <div className="w-2/5 h-full px-8 py-14">
-            <div className="w-full h-full flex flex-col justify-center items-center gap-8">
-              <h1 className="text-4xl font-semibold">
-                Tambah wawasanmu dengan blog yang kami sediakan
-              </h1>
-              <p className="text-md font-normal">
-                baca blog dari web kami untuk menambah wawasan anda agar anda
-                semakin kaya akan pengetahuan lainnya
-              </p>
-            </div>
+            </button>
           </div>
         </div>
       </header>
-      <section className="w-full h-full md:px-8 px-4 py-14 flex flex-col gap-6">
+      {/* <section className="w-full h-full md:px-8 px-4 py-14 flex flex-col gap-6">
         <div className="px-4">
           <InputSearch
             SearchHandle={searchHandle}
@@ -298,12 +296,84 @@ const sortBlogsByLatestViews = () => {
                 </div>
               ))}
         </div>
+      </section> */}
+      <section className="w-full h-full py-8 flex flex-col gap-6 px-4 mt-14">
+        <h1 className="w-full px-2 font-bold text-4xl">New blog for you</h1>
+        <div className="w-full h-full flex flex-col md:flex-row">
+          <div className="md:w-1/2 h-full flex flex-col gap-4 p-2">
+            <div className="w-full h-full">
+              <div className="w-full max-w-md mx-auto flex flex-col  bg-white overflow-hidden md:max-w-2xl">
+                <div className="md:flex w-full">
+                  <Image
+                    src="/path/to/your/image.jpg"
+                    alt="Blog Image"
+                    width={600}
+                    height={400}
+                    className="w-full md:h-[628px] object-cover md:w-full bg-gray-300"
+                  />
+                </div>
+                <div className="px-2 pb-8 pt-6 flex flex-col gap-2 h-[250px] w-full">
+                  <div className="flex items-baseline">
+                    <span className="inline-block border-2 border-black rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+                      UX things
+                    </span>
+                    <span className=" border-2 border-black rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+                      UX things
+                    </span>
+                  </div>
+                  <h2 className="mt-2 text-xl font-semibold text-gray-900">
+                    Countries with the Most people online
+                  </h2>
+                  <p className="mt-2 text-gray-600 text-sm">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua.
+                  </p>
+                  <a
+                    href="#"
+                    className="mt-4 text-green-500 hover:text-green-700 transition-all flex items-center"
+                  >
+                    Read more{" "}
+                    <span className="ml-2">{/* <FaArrowRight /> */}</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="md:w-1/2 h-full grid md:grid-cols-2 gap-2 p-2">
+            <BlogCard />
+            <BlogCard />
+            <BlogCard />
+            <BlogCard />
+          </div>
+        </div>
+      </section>
+      <section className="w-full px-4 gap-6 mt-8 flex flex-col">
+        <h1 className="text-4xl font-bold capitalize">any blog for you</h1>
+        <div className="md:flex grid grid-cols-2 gap-4 w-full">
+          <button className="btn bg-color-c2 text-white capitalize">
+            all blog
+          </button>
+          <button className="btn">UI Design</button>
+          <button className="btn">Coding</button>
+          <button className="btn">News</button>
+          <button className="btn">UX Experience</button>
+          <button className="btn">Sport</button>
+        </div>
+        <div className="grid md:grid-cols-4 gap-4 w-full">
+          {DataBlog.map((items, index) => {
+            console.log(items.kategori);
+            return (
+              <BlogCard img={items.Img} title={items.title} id={items.id} key={index} />
+            )
+          })}
+        </div>
       </section>
       <section className="w-full h-full mt-36 dark:text-white">
         <div className="w-full h-full flex flex-col md:flex-row">
           <div className="md:w-3/5 w-full md:px-8 px-4 flex flex-col gap-6">
             <div className=" pb-8 border-b-4 border-black dark:border-color-c4">
-              <h2 className="text-4xl capitalize ">lastest posts</h2>
+              <h2 className="text-4xl capitalize">lastest posts</h2>
             </div>
             <div className="w-full h-full grid md:grid-cols-2 grid-cols-1 gap-6">
               {latestPosts.map((items: any, index: any) => (
@@ -324,7 +394,9 @@ const sortBlogsByLatestViews = () => {
                     <h2 className="text-lg font-semibold">{items.title}</h2>
                     <p className="text-sm">{items.subtitle}</p>
                     <div className="flex flex-col">
-                      <h3 className="text-md font-bold dark:text-color-c4">{items.author}</h3>
+                      <h3 className="text-md font-bold dark:text-color-c4">
+                        {items.author}
+                      </h3>
                       <p className="flex items-center gap-2">
                         {items.date}{" "}
                         <Circle

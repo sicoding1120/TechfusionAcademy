@@ -69,6 +69,7 @@ const ShippingForm = () => {
 
 const LeftTopic = () => {
   const { query } = useRouter();
+  console.log(query.checkout?.at(1));
   const [shipTo, setShipTo] = useState({});
   const [taxesPaidBy, setTaxesPaidBy] = useState("Sender");
   const [count, setCount] = useState(30);
@@ -375,7 +376,7 @@ const LeftTopic = () => {
               <div className="w-full h-full flex flex-col gap-2">
                 <h3 className=" capitalize">nama class </h3>
                 <div className="py-2 px-4 border rounded-md">
-                  {query.checkout?.at(3)}
+                  {query.checkout?.at(2)}
                 </div>
               </div>
               <div className="w-full h-full flex flex-col gap-2">

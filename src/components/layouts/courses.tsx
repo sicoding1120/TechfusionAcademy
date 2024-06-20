@@ -11,6 +11,7 @@ import CardCourses from "../elements/cardCourses";
 import dataClass from "../data/json/class.json";
 import { IoIosArrowDown } from "react-icons/io";
 import CardClass from "../elements/cardClass";
+import { useRouter } from "next/router";
 
 const kanit = Kanit({
   subsets: ["latin"],
@@ -144,6 +145,8 @@ const Courses = () => {
     }, typingSpeed);
     return () => clearInterval(interval);
   }, []);
+
+  const router = useRouter()
   return (
     <main className={`${kanit.className} dark:bg-color-c7 dark:text-color-c4`}>
       <header className="w-full md:h-screen h-[70vh] bg-bgContentCourses md:px-14 bg-fixed md:pb-36">
@@ -162,7 +165,10 @@ const Courses = () => {
             mulai raih karir impian kamu untuk jadi talenta digital handal
             bersama TECHFUSION.
           </p>
-          <Link href={"/auth/login"} className="btn md:px-36 bg-bgButton border-none text-green-900 px-24 py-4">
+          <Link
+            href={"/auth/login"}
+            className="btn md:px-36 bg-bgButton border-none text-green-900 px-24 py-4"
+          >
             Join With Us
           </Link>
         </div>
@@ -193,17 +199,7 @@ const Courses = () => {
           </div>
         </div>
       </section>
-      <section className="w-full md:h-[60vh] h-[30vh] bg-bgCourses md:pt-48 bg-cover bg-no-repeat">
-        <div className="w-full h-full md:p-8 px-4 flex justify-center items-center flex-col gap-6 text-center">
-          <h1 className="md:text-5xl text-2xl font-semibold">
-            Bootcamp Options for You
-          </h1>
-          <p className="md:text-2xl text-xl">
-            Improve your digital skills by joining a bootcamp at TECHFUSION.
-          </p>
-        </div>
-      </section>
-      <section className="w-full h-full px-6 py-6">
+      <section className="w-full h-full px-6 py-6 md:pt-96 bg-bgCourses bg-cover bg-no-repeat">
         <div className="w-full h-full  rounded-xl border-2 dark:border-color-c2 bg-white dark:bg-color-c7">
           <div className="py-4 px-4 border-b border-color-c10 dark:border-color-c2">
             <h2 className="font-semibold capitalize text-2xl text-color-c10 dark:text-color-c2">
@@ -229,7 +225,99 @@ const Courses = () => {
           </div>
         </div>
       </section>
-      <section className="w-full h-full py-4 flex flex-col md:px-14 justify-center items-center gap-14 px-4">
+      <section className="w-full md:h-[60vh] h-[30vh]">
+        <div className="w-full h-full md:p-8 px-4 flex justify-center items-center flex-col gap-6 text-center">
+          <h1 className="md:text-5xl text-2xl font-semibold">
+            learn Options for You
+          </h1>
+          <p className="md:text-2xl text-xl w-6/12 text-center mt-4">
+            Improve your digital skills by joining a learn at TECHFUSION. class
+            is at the bottom of this section
+          </p>
+          <button onClick={() => router.push("/Class")} className="btn w-1/4 mt-8 text-lg bg-color-c9 text-white capitalize hover:bg-color-c2">
+            choose your class now!
+          </button>
+        </div>
+      </section>
+
+      <section className="w-full h-full md:px-14 px-2 py-8">
+        <div className=" w-full md:h-[500px] h-full rounded-3xl flex flex-col md:flex-row overflow-hidden">
+          <div className="md:w-[100px] w-full bg-color-c9 h-full flex md:flex-col flex-row items-center justify-center gap-8 py-8 md:py-0">
+            {icons.map((items, index) => (
+              <div
+                className={`w-14 h-14 rounded-lg flex justify-center items-center hover:bg-color-c10 transition-all bg-color-c10/50`}
+                key={index}
+                onClick={() => onclick(items)}
+              >
+                <Image src={items.src} alt={""} width={36} height={36} />
+              </div>
+            ))}
+          </div>
+          {dataRandom.id.card.data.type.courses.data.id[
+            id as unknown as keyof typeof dataRandom.id.card.data.type.courses.data.id
+          ].map((items: any, index: number) => {
+            return (
+              <CardCourses
+                key={index}
+                headTitle={items.headTitle}
+                title={items.title}
+                subTitle={items.subTitle}
+                isTopic={items.istopic}
+              >
+                {items.istopic === false ? null : (
+                  <div
+                    className={`w-full h-full md:px-8 px-2 py-3 flex flex-col md:flex-row gap-8 ${
+                      items.istopic ? "block" : "hidden"
+                    }`}
+                  >
+                    {items.asideTopic.map((items: any, index: any) => (
+                      <div
+                        className="md:w-1/2 w-full h-full bg-white rounded-2xl shadow-xl overflow-hidden"
+                        key={index}
+                      >
+                        <Image
+                          src={items.img}
+                          alt={""}
+                          width={400}
+                          height={400}
+                          className="w-full h-2/5 bg-red-500"
+                        />
+                        <div className="w-full md:h-3/5 h-full flex flex-col justify-between py-4 px-4">
+                          <div className="flex flex-col md:gap-3 gap-8">
+                            <h4 className="md:text-2xl text-lg">
+                              {items.title}
+                            </h4>
+                            {items.isDecs === true ? (
+                              <div className="w-full h-full text-blue-600">
+                                {items.description.map(
+                                  (items: any, index: any) => (
+                                    <div
+                                      className="flex px-2 py-1 gap-4 bg-color-text-1 rounded-md w-full h-full"
+                                      key={index}
+                                    >
+                                      <p className="text-sm">{items.title}</p>
+                                    </div>
+                                  )
+                                )}
+                              </div>
+                            ) : null}
+                          </div>
+                          <button
+                            className="btn w-full bg-color-c9 hover:bg-color-c2"
+                          >
+                            See Details
+                          </button>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </CardCourses>
+            );
+          })}
+        </div>
+      </section>
+      <section className="w-full h-full py-4 flex flex-col-reverse md:px-14 justify-center items-center gap-14 px-4">
         <div className="flex flex-col w-full h-full justify-center items-center">
           <div className="flex justify-center items-end md:gap-4 gap-2 md:p-3 p-2 bg-color-c10 md:w-[360px] w-[280px] rounded-2xl relative top-8">
             {textCourses.map((items, index) => (
@@ -310,75 +398,6 @@ const Courses = () => {
             </div>
           </div>
         </div>
-        <section className="w-full h-full px-6 py-8 rounded-xl">
-          <div className="flex flex-col gap-6">
-            <h1 className="text-4xl font-bold  capitalize text-gray-500 dark:text-color-c4">
-              class for you
-            </h1>
-            <div className="border-2 border-gray-500 dark:border-color-c2 rounded-xl flex overflow-hidden bg-white dark:bg-color-c2 items-center">
-              <input
-                type="text"
-                className="p-4 w-full outline-none dark:bg-color-c7"
-                onChange={searchHandle}
-              />
-              <div className="w-14 h-full flex justify-center items-center">
-                <IoIosArrowDown
-                  size={24}
-                  className={`cursor-pointer transition-all ${
-                    rotate === true ? "rotate-180" : "rotate-0"
-                  }`}
-                  onClick={() => setRotate(!rotate)}
-                />
-              </div>
-            </div>
-            <h3 className="md:text-xl text-center md:text-start font-semibold text-gray-500 dark:text-color-c4">
-              kamu memiliki{" "}
-              <span className="text-red-500">{dataClass.length}</span> kelas
-              untuk anda
-            </h3>
-          </div>
-          <div className="w-full h-full py-4">
-            <div className="w-full md:h-full h-full grid grid-cols-1 md:grid-cols-3 gap-4">
-              {validation === true
-                ? filter &&
-                  filter.map((items: any, index: any) => (
-                    <CardClass
-                      parse={false}
-                      items={items}
-                      isHandle={hasil}
-                      handleFuncIn={() => SaveClass(items)}
-                      handleFuncOut={() => UnSaveClass(items)}
-                      link={items.headerTitle}
-                      key={index}
-                      image={items.img}
-                      title={items.title}
-                      jmlMateri={items.classDetail?.materials}
-                      jmlSkillPoint={items.classDetail?.points}
-                      price={items.price}
-                    />
-                  ))
-                : dataClass.map((items: any, index: any) => (
-                    <CardClass
-                      parse={false}
-                      items={items}
-                      isHandle={hasil}
-                      handleFuncIn={() => SaveClass(items)}
-                      handleFuncOut={() => UnSaveClass(items)}
-                      link={items.headerTitle}
-                      key={index}
-                      image={items.img}
-                      title={items.title}
-                      jmlMateri={items.classDetail.materials}
-                      jmlSkillPoint={items.classDetail.points}
-                      price={items.price}
-                    />
-                  ))}
-            </div>
-              <div className="w-full flex mt-14 justify-center items-center">
-                <button className="btn bg-color-c9 hover:bg-color-c2 hover:text-white text-lg capitalize w-1/4">see olther</button>
-              </div>
-          </div>
-        </section>
         <div className="grid md:grid-cols-2 grid-cols-1 gap-14 w-full md:h-[60vh] h-full">
           {DataCard.data.type.courses.data.map((items, index) => (
             <div
@@ -458,81 +477,6 @@ const Courses = () => {
               </div>
             </div>
           ))}
-        </div>
-      </section>
-      <section className="w-full h-full md:px-14 px-2 py-8">
-        <div className=" w-full md:h-[500px] h-full rounded-3xl flex flex-col md:flex-row overflow-hidden">
-          <div className="md:w-[100px] w-full bg-color-c9 h-full flex md:flex-col flex-row items-center justify-center gap-8 py-8 md:py-0">
-            {icons.map((items, index) => (
-              <div
-                className={`w-14 h-14 rounded-lg flex justify-center items-center hover:bg-color-c10 transition-all bg-color-c10/50`}
-                key={index}
-                onClick={() => onclick(items)}
-              >
-                <Image src={items.src} alt={""} width={36} height={36} />
-              </div>
-            ))}
-          </div>
-          {dataRandom.id.card.data.type.courses.data.id[
-            id as unknown as keyof typeof dataRandom.id.card.data.type.courses.data.id
-          ].map((items: any, index: number) => {
-            return (
-              <CardCourses
-                key={index}
-                headTitle={items.headTitle}
-                title={items.title}
-                subTitle={items.subTitle}
-                isTopic={items.istopic}
-              >
-                {items.istopic === false ? null : (
-                  <div
-                    className={`w-full h-full md:px-8 px-2 py-3 flex flex-col md:flex-row gap-8 ${
-                      items.istopic ? "block" : "hidden"
-                    }`}
-                  >
-                    {items.asideTopic.map((items: any, index: any) => (
-                      <div
-                        className="md:w-1/2 w-full h-full bg-white rounded-2xl shadow-xl overflow-hidden"
-                        key={index}
-                      >
-                        <Image
-                          src={items.img}
-                          alt={""}
-                          width={400}
-                          height={400}
-                          className="w-full h-2/5 bg-red-500"
-                        />
-                        <div className="w-full md:h-3/5 h-full flex flex-col justify-between py-4 px-4">
-                          <div className="flex flex-col md:gap-3 gap-8">
-                            <h4 className="md:text-2xl text-lg">
-                              {items.title}
-                            </h4>
-                            {items.isDecs === true ? (
-                              <div className="w-full h-full text-blue-600">
-                                {items.description.map(
-                                  (items: any, index: any) => (
-                                    <div
-                                      className="flex px-2 py-1 gap-4 bg-color-text-1 rounded-md w-full h-full"
-                                      key={index}
-                                    >
-                                      <p className="text-sm">{items.title}</p>
-                                    </div>
-                                  )
-                                )}
-                              </div>
-                            ) : null}
-                          </div>
-                          <button className="btn w-full bg-color-c9 hover:bg-color-c2">
-                            See Details
-                          </button>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </CardCourses>
-            );
-          })}
         </div>
       </section>
     </main>

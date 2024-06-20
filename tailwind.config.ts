@@ -21,6 +21,7 @@ const config: Config = {
         bgButton: "url('/TechfusionAcademy/assets/background/bg-button.png')",
         bgBlog:
           "url('/TechfusionAcademy/assets/background/bg-content-blog.png')",
+        bgBlogHead: "url('/assets/background/bg-blog.png')",
         bgDetailClass:
           "url('/TechfusionAcademy/assets/background/bg-detailClass.png')",
         bgFooter: "url('/TechfusionAcademy/assets/background/bg-footer.png')",
@@ -30,6 +31,7 @@ const config: Config = {
         bgText: "url('/TechfusionAcademy/assets/background/bg-text.png')",
         bgCard:
           "url('/TechfusionAcademy/assets/background/bg-cardDashboard.png')",
+        bgPricing: "url('/TechfusionAcademy/assets/background/bg-pricing.png')",
       },
       colors: {
         color: {
@@ -43,6 +45,7 @@ const config: Config = {
           c8: "#F3F4F6",
           c9: "#9EE34C",
           c10: "#055C20",
+          c11: "#E1F384",
           text: { 1: "#96A199", 2: "#828282" },
         },
       },

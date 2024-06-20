@@ -30,6 +30,8 @@ const Authentification = () => {
   const [password, setPassword] = useState("");
   const [count, setCount] = useState("");
   const [register, setIsRegister] = useState(false);
+  const [validasiName, setValidasiName] = useState(false);
+  const [validasiPassword, setValidasiPassword] = useState(false);
 
 
   const createIdRandom = () => {
@@ -49,6 +51,7 @@ const Authentification = () => {
 
   // Contoh penggunaan
   const handleSubmit = async (event: any) => {
+
     event.preventDefault();
     if (!count) {
       const newId = createIdRandom();
@@ -97,6 +100,9 @@ const Authentification = () => {
       toast.success("berhasil login");
     }
   };
+
+ 
+
   return (
     <section className={`${kanit.className} w-full h-screen md:bg-white flex`}>
       <div
@@ -162,52 +168,102 @@ const Authentification = () => {
               {query.slug === "register" ? (
                 <div className="flex flex-col gap-4">
                   <InputNormal
+                    classname={
+                      name === "" && validasiName
+                        ? "input-error"
+                        : name !== "" && validasiName
+                        ?
+                        "input-success"
+                        : "input-bordered"
+                    }
                     type={"text"}
                     onchange={(e: any) => setName(e.target.value)}
+                    onclick={() => setValidasiName(true)}
                     value={name}
                   >
                     d
                   </InputNormal>
+                  {name === "" && validasiName
+                    ? "colom nama harus diisi"
+                    : name !== "" && validasiName
+                    ?  " "
+                    : " colom nama harus diisi" }
                   <InputNormal
+                    classname={
+                      password === "" && validasiPassword
+                        ? "input-error"
+                        : password !== "" && validasiPassword
+                        ? password.length > 8
+                          ? "input-success"
+                          : "input-warning"
+                        : "input-bordered"
+                    }
+                    onclick={() => setValidasiPassword(true)}
                     type={"password"}
-                    onchange={(e: any) => setPassword(e.target.value)}
+                    onchange={(e: any) => {
+                      setPassword(e.target.value);
+                    }}
                     value={password}
                   >
                     d
                   </InputNormal>
+                  {password === "" && validasiPassword
+                    ? "colom password harus diisi"
+                    : password !== "" && validasiPassword
+                    ? password.length > 7
+                      ? ""
+                      : "password harus lebih dari 7 karakter"
+                    : ""}
                 </div>
               ) : (
                 <div className="flex flex-col gap-4">
-                  {/* {dataRandom.id.input.type[2].data.map((items, index) => (
-                    <Input
-                      placeholder={`enter your ${items.name}`}
-                      key={index}
-                      iconFirst={true}
-                      imageUrl={items.iconUrl}
-                      type={items.type}
-                      iconLast={false}
-                      image={undefined}
-                      classNameInput={undefined}
-                      password={undefined}
-                      passwordValid={undefined}
-                      valueInput={undefined}
-                    />
-                  ))} */}
                   <InputNormal
+                    classname={
+                      name === "" && validasiName
+                        ? "input-error"
+                        : name !== "" && validasiName
+                        ?  "input-success"
+                        : "input-bordered"
+                    }
                     type={"text"}
                     onchange={(e: any) => setName(e.target.value)}
+                    onclick={() => setValidasiName(true)}
                     value={name}
                   >
                     d
                   </InputNormal>
-
+                  {name === "" && validasiName
+                    ? "colom nama harus diisi"
+                    : name !== "" && validasiName
+                    ? 
+                      ""
+                    : ""}
                   <InputNormal
+                    classname={
+                      password === "" && validasiPassword
+                        ? "input-error"
+                        : password !== "" && validasiPassword
+                        ? password.length > 8
+                          ? "input-success"
+                          : "input-warning"
+                        : "input-bordered"
+                    }
+                    onclick={() => setValidasiPassword(true)}
                     type={"password"}
-                    onchange={(e: any) => setPassword(e.target.value)}
+                    onchange={(e: any) => {
+                      setPassword(e.target.value);
+                    }}
                     value={password}
                   >
                     d
                   </InputNormal>
+                  {password === "" && validasiPassword
+                    ? "colom password harus diisi"
+                    : password !== "" && validasiPassword
+                    ? password.length > 8
+                      ? ""
+                      : "password harus lebih dari 7 karakter"
+                    : ""}
                 </div>
               )}
             </form>

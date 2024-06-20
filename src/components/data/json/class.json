@@ -3,6 +3,13 @@
     "title": "Basic of Html",
     "keyOfSearch": "htm",
     "headerTitle": "Html",
+    "kategori": [{
+        "title": "basic"
+    }, {
+        "title": "popular"
+    }, {
+        "title": "free"
+    }],
     "price": 0,
     "isDiscount": false,
     "img": "/TechfusionAcademy/assets/class/html.png",
@@ -42,7 +49,12 @@
     }
 }, {
     "id": 2,
-    "title": "intro to UI/UX",
+    "title": "intro to UIUX",
+        "kategori": [{
+            "title": "basic"
+        }, {
+            "title": "popular"
+        }],
     "keyOfSearch": "uiux",
     "headerTitle": "Css",
     "price": 1200000,
@@ -84,8 +96,13 @@
     }
 }, {
     "id": 3,
-    "title": "Javascript Basic 1",
+    "title": "Javascript Basic",
     "keyOfSearch": "jav",
+        "kategori": [{
+            "title": "basic"
+        }, {
+            "title": "popular"
+        }],
     "headerTitle": "Js",
     "price": 250000,
     "isDiscount": false,

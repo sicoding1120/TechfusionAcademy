@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Courses from "@/components/layouts/courses";
 import Blog from "@/components/layouts/blog";
 import Price from "@/components/layouts/pricing";
+import ClassNew from "@/components/layouts/classNew";
 
 const Dynamic = () => {
   const { query } = useRouter();
@@ -17,6 +18,9 @@ const Dynamic = () => {
       break;
     case "Pricing":
       content = <Price />;
+      break;
+    case "Class":
+      content = <ClassNew />;
       break;
     default:
       content = <div>Halaman tidak ditemukan</div>;
